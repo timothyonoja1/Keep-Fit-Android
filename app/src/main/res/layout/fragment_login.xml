@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textSize="30sp"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/first_name"
+        android:autofillHints="name"
+        android:inputType="text"
+        android:textSize="18sp"
+        android:padding="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_background"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/password_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:autofillHints="password"
+        android:layout_marginTop="10dp"
+        android:hint="@string/password"
+        android:textSize="18sp"
+        android:padding="5dp"
+        android:background="@drawable/edit_text_background"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        >
+        <RadioButton
+            android:id="@+id/remember_me_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/remember_me"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/login_button_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="@string/login" />
+
+    <TextView
+        android:id="@+id/forgot_password_link_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_password"/>
+
+
+</LinearLayout>

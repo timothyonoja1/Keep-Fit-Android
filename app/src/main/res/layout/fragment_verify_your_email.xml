@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/verify_your_email"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/email_sent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_code"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:labelFor="@+id/code_edit_text"/>
+
+    <EditText
+        android:id="@+id/code_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberPassword"
+        android:layout_marginTop="10dp"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/verify_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/verify" />
+
+    <TextView
+        android:id="@+id/sign_in_link_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/verify_fragment_sign_in_link"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>
