@@ -6,7 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import com.kratos.keepfit.R;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 import com.kratos.keepfit.databinding.FragmentEnterDetailsBinding;
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -21,14 +22,11 @@ public class EnterDetailsFragment extends Fragment {
         binding = FragmentEnterDetailsBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        binding.confirmDetailsButton.setOnClickListener(buttonView ->
-                requireActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.main_activity_fragment_container_view,
-                                HomeFragment.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack(null)  // name can be null
-                        .commit()
-        );
+        binding.confirmDetailsButton.setOnClickListener(buttonView -> {
+            NavDirections action = EnterDetailsFragmentDirections
+                    .actionEnterDetailsFragmentToHomeFragment();
+            Navigation.findNavController(buttonView).navigate(action);
+        });
         return view;
     }
 

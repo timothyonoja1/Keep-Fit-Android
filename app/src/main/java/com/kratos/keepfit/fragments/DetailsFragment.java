@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
+
 import com.kratos.keepfit.R;
 import com.kratos.keepfit.databinding.FragmentDetailsBinding;
 import dagger.hilt.android.AndroidEntryPoint;
@@ -20,14 +23,10 @@ public class DetailsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentDetailsBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
-        binding.confirmButton.setOnClickListener(buttonView ->
-                requireActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.main_activity_fragment_container_view,
-                                MainFragment.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack(null)  // name can be null
-                        .commit()
-        );
+        binding.confirmButton.setOnClickListener(buttonView -> {
+            NavDirections action = DetailsFragmentDirections.actionDetailsFragmentToMainFragment();
+            Navigation.findNavController(buttonView).navigate(action);
+        });
         return view;
     }
 
@@ -36,5 +35,4 @@ public class DetailsFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }

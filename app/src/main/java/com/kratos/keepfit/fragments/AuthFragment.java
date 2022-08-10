@@ -7,7 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import com.kratos.keepfit.R;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 import com.kratos.keepfit.databinding.FragmentAuthBinding;
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -22,20 +23,14 @@ public class AuthFragment extends Fragment {
         binding = FragmentAuthBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
         binding.getStarted.setOnClickListener(buttonView -> {
-            requireActivity().getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.main_activity_fragment_container_view,
-                            DetailsFragment.class, null)
-                    .setReorderingAllowed(true)
-                    .addToBackStack(null)  // name can be null
-                    .commit();
+            NavDirections detailsAction = AuthFragmentDirections
+                    .actionAuthenticationFragmentToDetailsFragment();
+            Navigation.findNavController(buttonView).navigate(detailsAction);
         });
         binding.loginLinkTextView.setOnClickListener(buttonView -> {
-            requireActivity().getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.main_activity_fragment_container_view,
-                            LoginFragment.class, null)
-                    .setReorderingAllowed(true)
-                    .addToBackStack(null)  // name can be null
-                    .commit();
+            NavDirections loginAction = AuthFragmentDirections
+                    .actionAuthenticationFragmentToLoginFragment();
+            Navigation.findNavController(buttonView).navigate(loginAction);
         });
         return view;
     }

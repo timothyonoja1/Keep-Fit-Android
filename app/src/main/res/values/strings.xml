@@ -96,4 +96,17 @@
     <string name="please_identify_injuries">Please Identify injuries</string>
     <string name="if_none_click_none">(If none, click none)</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="david_adebola">David Adebola</string>
+    <string name="beginner">Beginner</string>
+    <string name="complete_profile">Complete Profile</string>
+    <string name="folder_icon">Folder icon</string>
+    <string name="general">General</string>
+    <string name="account_and_synchronization">Account and Synchronization</string>
+    <string name="productivity">Productivity</string>
+    <string name="plan_and_goals">Plan and goals</string>
+    <string name="upgrade_to_premium">Upgrade to premium</string>
+    <string name="get_more_features">Get more features</string>
+    <string name="terms_and_conditions">Terms and conditions</string>
+    <string name="about">About</string>
+    <string name="log_out">Log out</string>
 </resources>

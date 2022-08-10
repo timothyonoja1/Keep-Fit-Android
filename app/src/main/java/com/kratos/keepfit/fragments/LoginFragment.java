@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
+
 import com.kratos.keepfit.R;
 import com.kratos.keepfit.databinding.FragmentLoginBinding;
 import dagger.hilt.android.AndroidEntryPoint;
@@ -21,22 +24,15 @@ public class LoginFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentLoginBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
-        binding.loginButtonEditText.setOnClickListener(buttonView ->
-                requireActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.main_activity_fragment_container_view,
-                                HomeFragment.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack(null)  // name can be null
-                        .commit()
-        );
-        binding.forgotPasswordLinkTextView.setOnClickListener(buttonView ->
-                requireActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.main_activity_fragment_container_view,
-                                ForgotPasswordFragment.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack(null)  // name can be null
-                        .commit()
-        );
+        binding.loginButtonEditText.setOnClickListener(buttonView -> {
+            NavDirections action = LoginFragmentDirections.actionLoginFragmentToHomeFragment();
+            Navigation.findNavController(buttonView).navigate(action);
+        });
+        binding.forgotPasswordLinkTextView.setOnClickListener(buttonView -> {
+            NavDirections action = LoginFragmentDirections
+                    .actionLoginFragmentToForgotPasswordFragment();
+            Navigation.findNavController(buttonView).navigate(action);
+        });
         return view;
     }
 

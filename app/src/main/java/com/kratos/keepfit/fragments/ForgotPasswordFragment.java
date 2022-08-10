@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import com.kratos.keepfit.R;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
+
 import com.kratos.keepfit.databinding.FragmentForgotPasswordBinding;
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -20,14 +22,11 @@ public class ForgotPasswordFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentForgotPasswordBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
-        binding.sendButton.setOnClickListener(buttonView ->
-                requireActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.main_activity_fragment_container_view,
-                                HomeFragment.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack(null)  // name can be null
-                        .commit()
-        );
+        binding.sendButton.setOnClickListener(buttonView -> {
+            NavDirections action = ForgotPasswordFragmentDirections
+                    .actionForgotPasswordFragmentToHomeFragment();
+            Navigation.findNavController(buttonView).navigate(action);
+        });
         return view;
     }
 
