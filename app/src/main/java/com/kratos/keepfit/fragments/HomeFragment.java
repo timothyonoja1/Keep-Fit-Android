@@ -21,7 +21,12 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
-
+        binding.allButton.setOnClickListener(buttonView -> {
+            binding.keepFitMatchesButton.setEnabled(false);
+        });
+        binding.keepFitMatchesButton.setOnClickListener(buttonView -> {
+            binding.allButton.setEnabled(false);
+        });
         return view;
     }
 

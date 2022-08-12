@@ -29,7 +29,7 @@ public class RegisterFragment extends Fragment {
         });
         binding.confirmButton.setOnClickListener(buttonView -> {
             NavDirections action = RegisterFragmentDirections
-                    .actionRegisterFragmentToEnterNameFragment();
+                    .actionRegisterFragmentToVerifyFragment();
             Navigation.findNavController(buttonView).navigate(action);
         });
         return view;

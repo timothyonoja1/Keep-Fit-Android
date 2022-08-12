@@ -26,6 +26,11 @@ public class VerifyFragment extends Fragment {
                     .actionVerifyFragmentToHomeFragment();
             Navigation.findNavController(buttonView).navigate(action);
         });
+        binding.signInLinkTextView.setOnClickListener(buttonView -> {
+            NavDirections action = VerifyFragmentDirections
+                    .actionVerifyFragmentToLoginFragment();
+            Navigation.findNavController(buttonView).navigate(action);
+        });
         return view;
     }
 

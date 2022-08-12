@@ -22,6 +22,12 @@ public class MainFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentMainBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+        binding.allButton.setOnClickListener(buttonView -> {
+            binding.keepFitMatchesButton.setEnabled(false);
+        });
+        binding.keepFitMatchesButton.setOnClickListener(buttonView -> {
+            binding.allButton.setEnabled(false);
+        });
         binding.signupButton.setOnClickListener(buttonView -> {
             NavDirections action = MainFragmentDirections
                     .actionMainFragmentToRegisterFragment();
