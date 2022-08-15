@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.kratos.keepfit.R;
 import com.kratos.keepfit.core.Notification;
 import com.kratos.keepfit.databinding.FragmentNotificationListBinding;
-import com.kratos.keepfit.databinding.NotificationListItemBinding;
 import java.util.ArrayList;
 import java.util.List;
 import dagger.hilt.android.AndroidEntryPoint;
@@ -77,7 +76,6 @@ public class NotificationListFragment extends Fragment {
             private final TextView notificationTimeTextView;
             private final ImageView notificationImage;
             private Notification notification;
-            private NotificationListItemBinding itemBinding;
 
             public NotificationHolder(View itemView) {
                 super(itemView);
@@ -104,7 +102,7 @@ public class NotificationListFragment extends Fragment {
         @Override
         public NotificationHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
             View view = LayoutInflater.from(viewGroup.getContext())
-                    .inflate(R.layout.notification_list_item, viewGroup, false);
+                    .inflate(R.layout.list_item_notification, viewGroup, false);
             return new NotificationHolder(view);
         }
 

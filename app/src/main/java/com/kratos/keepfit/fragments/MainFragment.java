@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
-
 import com.kratos.keepfit.databinding.FragmentMainBinding;
 import dagger.hilt.android.AndroidEntryPoint;
 

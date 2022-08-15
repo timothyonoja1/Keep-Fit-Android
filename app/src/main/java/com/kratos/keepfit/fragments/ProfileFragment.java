@@ -6,26 +6,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavDirections;
-import androidx.navigation.Navigation;
-import com.kratos.keepfit.databinding.FragmentForgotPasswordBinding;
+import com.kratos.keepfit.databinding.FragmentProfileBinding;
 import dagger.hilt.android.AndroidEntryPoint;
 
 /** Fragment for user log in. */
 @AndroidEntryPoint
-public class ForgotPasswordFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
-    private FragmentForgotPasswordBinding binding;
+    private FragmentProfileBinding binding;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentForgotPasswordBinding.inflate(inflater, container, false);
+        binding = FragmentProfileBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
-        binding.sendButton.setOnClickListener(buttonView -> {
-            NavDirections action = ForgotPasswordFragmentDirections
-                    .actionForgotPasswordFragmentToHomeContainerFragment();
-            Navigation.findNavController(buttonView).navigate(action);
-        });
+
         return view;
     }
 

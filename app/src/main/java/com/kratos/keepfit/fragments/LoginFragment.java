@@ -4,13 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
-
-import com.kratos.keepfit.R;
 import com.kratos.keepfit.databinding.FragmentLoginBinding;
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -25,7 +22,8 @@ public class LoginFragment extends Fragment {
         binding = FragmentLoginBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
         binding.loginButtonEditText.setOnClickListener(buttonView -> {
-            NavDirections action = LoginFragmentDirections.actionLoginFragmentToHomeFragment();
+            NavDirections action = LoginFragmentDirections
+                    .actionLoginFragmentToHomeContainerFragment();
             Navigation.findNavController(buttonView).navigate(action);
         });
         binding.forgotPasswordLinkTextView.setOnClickListener(buttonView -> {

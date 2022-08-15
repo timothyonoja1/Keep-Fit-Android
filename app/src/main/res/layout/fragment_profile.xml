@@ -1,284 +1,285 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:background="@drawable/user_profile_picture"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/david_adebola"
+            android:layout_gravity="center"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/beginner"
+            android:layout_gravity="center"
+            android:textSize="20sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/complete_profile"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:textSize="20sp"
+                android:text="@string/t_t_218_n_sessions"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="20dp">
 
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_gravity="center"
-                android:background="@drawable/user_profile_picture"/>
-
-            <TextView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/david_adebola"
-                android:layout_gravity="center"
-                android:textSize="25sp"
-                android:layout_marginTop="20dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/beginner"
-                android:layout_gravity="center"
-                android:textSize="20sp"/>
+                android:src="@drawable/ic_outline_folder_24"
+                android:contentDescription="@string/folder_icon"
+                android:layout_weight="0"
+                android:layout_marginTop="5dp"/>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/complete_profile"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="12dp"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                tools:ignore="RtlSymmetry">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:textSize="20sp"
-                    android:text="@string/t_t_218_n_sessions"/>
+                    android:text="@string/general"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/account_and_synchronization"
+                    android:textSize="15sp"/>
+
             </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                android:contentDescription="@string/arrow_icon"
+                android:paddingTop="15dp"
+                android:layout_gravity="right"
+                tools:ignore="RtlHardcoded" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_insights_24"
+                android:contentDescription="@string/productivity_icon"
+                android:layout_weight="0"
+                android:layout_marginTop="5dp"/>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                tools:ignore="RtlSymmetry">
 
-                <ImageView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_outline_folder_24"
-                    android:contentDescription="@string/folder_icon"
-                    android:layout_weight="0"
-                    android:layout_marginTop="5dp"/>
+                    android:text="@string/productivity"
+                    android:textSize="20sp"/>
 
-                <LinearLayout
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingStart="20dp"
-                    tools:ignore="RtlSymmetry">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/general"
-                        android:textSize="25sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/account_and_synchronization"
-                        android:textSize="20sp"/>
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                    android:paddingTop="15dp"
-                    android:layout_gravity="right"
-                    tools:ignore="RtlHardcoded" />
+                    android:text="@string/plan_and_goals"
+                    android:textSize="15sp"/>
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
+
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_weight="0"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                android:contentDescription="@string/arrow_icon"
+                android:paddingTop="15dp"
+                android:layout_gravity="right"
+                tools:ignore="RtlHardcoded" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_insights_24"
-                    android:contentDescription="@string/folder_icon"
-                    android:layout_weight="0"
-                    android:layout_marginTop="5dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingStart="20dp"
-                    tools:ignore="RtlSymmetry">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/productivity"
-                        android:textSize="25sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/plan_and_goals"
-                        android:textSize="20sp"/>
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                    android:paddingTop="15dp"
-                    android:layout_gravity="right"
-                    tools:ignore="RtlHardcoded" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_outline_star_border_24"
-                    android:contentDescription="@string/folder_icon"
-                    android:layout_weight="0"
-                    android:layout_marginTop="5dp"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingStart="20dp"
-                    tools:ignore="RtlSymmetry">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/upgrade_to_premium"
-                        android:textSize="25sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/get_more_features"
-                        android:textSize="20sp"/>
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                    android:paddingTop="15dp"
-                    android:layout_gravity="right"
-                    tools:ignore="RtlHardcoded" />
-
-            </LinearLayout>
+                android:src="@drawable/ic_outline_star_border_24"
+                android:contentDescription="@string/upgrade_icon"
+                android:layout_weight="0"
+                android:layout_marginTop="5dp"/>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                tools:ignore="RtlSymmetry">
 
-                <ImageView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_round_error_outline_24"
-                    android:contentDescription="@string/folder_icon"
-                    android:layout_weight="0"
-                    android:layout_marginTop="5dp"/>
+                    android:text="@string/upgrade_to_premium"
+                    android:textSize="20sp"/>
 
-                <LinearLayout
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingStart="20dp"
-                    tools:ignore="RtlSymmetry">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/about"
-                        android:textSize="25sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/terms_and_conditions"
-                        android:textSize="20sp"/>
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                    android:paddingTop="15dp"
-                    android:layout_gravity="right"
-                    tools:ignore="RtlHardcoded" />
+                    android:text="@string/get_more_features"
+                    android:textSize="15sp"/>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_outline_login_24"
-                    android:contentDescription="@string/folder_icon"
-                    android:layout_weight="0"
-                    android:layout_marginTop="5dp"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingStart="20dp"
-                    tools:ignore="RtlSymmetry">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/log_out"
-                        android:textSize="25sp"/>
-
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                    android:paddingTop="15dp"
-                    android:layout_gravity="right"
-                    tools:ignore="RtlHardcoded" />
-
-            </LinearLayout>
+                android:layout_weight="0"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                android:contentDescription="@string/arrow_icon"
+                android:paddingTop="15dp"
+                android:layout_gravity="right"
+                tools:ignore="RtlHardcoded" />
 
         </LinearLayout>
 
-    </ScrollView>
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_round_error_outline_24"
+                android:contentDescription="@string/about_icon"
+                android:layout_weight="0"
+                android:layout_marginTop="5dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                tools:ignore="RtlSymmetry">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/terms_and_conditions"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                android:contentDescription="@string/arrow_icon"
+                android:paddingTop="15dp"
+                android:layout_gravity="right"
+                tools:ignore="RtlHardcoded" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_outline_login_24"
+                android:contentDescription="@string/logout_icon"
+                android:layout_weight="0"
+                android:layout_marginTop="5dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                tools:ignore="RtlSymmetry">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/log_out"
+                    android:textSize="20sp"/>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                android:contentDescription="@string/arrow_icon"
+                android:paddingTop="15dp"
+                android:layout_gravity="right"
+                tools:ignore="RtlHardcoded" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

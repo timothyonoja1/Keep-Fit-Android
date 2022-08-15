@@ -4,11 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import com.kratos.keepfit.databinding.FragmentHomeBinding;
-
 import dagger.hilt.android.AndroidEntryPoint;
 
 /** Fragment for user log in. */

@@ -24,7 +24,7 @@ public class SplashScreenFragment extends Fragment {
         View view = binding.getRoot();
         binding.splashScreenTextView.setOnClickListener(buttonView -> {
             NavDirections action = SplashScreenFragmentDirections
-                    .actionSplashScreenFragmentToNotificationListFragment();
+                    .actionSplashScreenFragmentToAuthenticationFragment();
             Navigation.findNavController(buttonView).navigate(action);
         });
         return view;
