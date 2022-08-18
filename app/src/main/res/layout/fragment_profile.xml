@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:text="@string/david_adebola"
             android:layout_gravity="center"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:layout_marginTop="20dp"/>
 
         <TextView
@@ -30,40 +30,41 @@
             android:layout_height="wrap_content"
             android:text="@string/beginner"
             android:layout_gravity="center"
-            android:textSize="20sp"/>
+            android:textSize="16sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <Button
+                android:id="@+id/complete_profile_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/complete_profile"
                 android:layout_marginEnd="20dp"
-                android:layout_marginTop="12dp"/>
+                android:layout_marginTop="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:text="@string/t_t_218_n_sessions"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:gravity="center">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_outline_folder_24"
                 android:contentDescription="@string/folder_icon"
-                android:layout_weight="0"
-                android:layout_marginTop="5dp"/>
+                android:layout_weight="0"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -77,13 +78,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/general"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/account_and_synchronization"
-                    android:textSize="15sp"/>
+                    android:textSize="14sp"/>
 
             </LinearLayout>
 
@@ -93,23 +94,21 @@
                 android:layout_weight="0"
                 android:src="@drawable/ic_baseline_arrow_forward_ios_24"
                 android:contentDescription="@string/arrow_icon"
-                android:paddingTop="15dp"
-                android:layout_gravity="right"
-                tools:ignore="RtlHardcoded" />
+                android:gravity="center"/>
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:gravity="center">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_baseline_insights_24"
                 android:contentDescription="@string/productivity_icon"
-                android:layout_weight="0"
-                android:layout_marginTop="5dp"/>
+                android:layout_weight="0"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -123,13 +122,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/productivity"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/plan_and_goals"
-                    android:textSize="15sp"/>
+                    android:textSize="14sp"/>
 
             </LinearLayout>
 
@@ -139,23 +138,21 @@
                 android:layout_weight="0"
                 android:src="@drawable/ic_baseline_arrow_forward_ios_24"
                 android:contentDescription="@string/arrow_icon"
-                android:paddingTop="15dp"
-                android:layout_gravity="right"
-                tools:ignore="RtlHardcoded" />
+                android:gravity="center"/>
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:gravity="center">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_outline_star_border_24"
                 android:contentDescription="@string/upgrade_icon"
-                android:layout_weight="0"
-                android:layout_marginTop="5dp"/>
+                android:layout_weight="0"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -169,13 +166,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/upgrade_to_premium"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/get_more_features"
-                    android:textSize="15sp"/>
+                    android:textSize="14sp"/>
 
             </LinearLayout>
 
@@ -185,24 +182,22 @@
                 android:layout_weight="0"
                 android:src="@drawable/ic_baseline_arrow_forward_ios_24"
                 android:contentDescription="@string/arrow_icon"
-                android:paddingTop="15dp"
-                android:layout_gravity="right"
-                tools:ignore="RtlHardcoded" />
+                android:gravity="center"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:gravity="center">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_round_error_outline_24"
                 android:contentDescription="@string/about_icon"
-                android:layout_weight="0"
-                android:layout_marginTop="5dp"/>
+                android:layout_weight="0"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -216,13 +211,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/about"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/terms_and_conditions"
-                    android:textSize="15sp"/>
+                    android:textSize="14sp"/>
 
             </LinearLayout>
 
@@ -232,24 +227,22 @@
                 android:layout_weight="0"
                 android:src="@drawable/ic_baseline_arrow_forward_ios_24"
                 android:contentDescription="@string/arrow_icon"
-                android:paddingTop="15dp"
-                android:layout_gravity="right"
-                tools:ignore="RtlHardcoded" />
+                android:gravity="center"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:gravity="center">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_outline_login_24"
                 android:contentDescription="@string/logout_icon"
-                android:layout_weight="0"
-                android:layout_marginTop="5dp"/>
+                android:layout_weight="0"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -263,7 +256,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/log_out"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
 
             </LinearLayout>
@@ -274,9 +267,7 @@
                 android:layout_weight="0"
                 android:src="@drawable/ic_baseline_arrow_forward_ios_24"
                 android:contentDescription="@string/arrow_icon"
-                android:paddingTop="15dp"
-                android:layout_gravity="right"
-                tools:ignore="RtlHardcoded" />
+                android:gravity="center"/>
 
         </LinearLayout>
 

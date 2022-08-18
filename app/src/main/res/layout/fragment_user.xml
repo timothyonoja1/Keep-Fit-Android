@@ -30,14 +30,14 @@
                 android:text="@string/david_adebola"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"
-                android:textSize="30sp"/>
+                android:textSize="24sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/fitness_9_year_journey"
                 android:layout_gravity="center"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -74,6 +74,7 @@
                 android:layout_weight="0"
                 android:textSize="15sp"
                 android:textColor="@color/blue_new"/>
+
         </LinearLayout>
 
         <TextView
@@ -83,7 +84,7 @@
             android:paddingEnd="20dp"
             android:text="@string/verified_by_dwayne_johnson"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="10dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:paddingStart="20dp"
@@ -93,12 +94,10 @@
             android:layout_height="wrap_content"
             />
 
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:paddingStart="20dp"
             android:paddingEnd="20dp">
             <TextView
@@ -120,16 +119,14 @@
             android:id="@+id/gallery_list_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            />
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/description"
             android:textSize="20sp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"/>
 
@@ -143,7 +140,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:paddingStart="20dp"
             android:paddingEnd="20dp">
             <TextView
@@ -246,7 +243,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Thunder \n Eagle"
-                    android:textSize="30sp"/>
+                    android:textSize="24sp"/>
             </LinearLayout>
 
         </LinearLayout>

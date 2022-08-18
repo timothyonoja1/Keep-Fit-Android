@@ -1,48 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="20dp"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:orientation="horizontal">
+        android:padding="20dp"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/all_button"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="@string/all"
-             />
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/keep_fit_matches_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="10dp"
-            android:text="@string/keep_fit_matches"
-            android:enabled="false"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:orientation="horizontal">
 
-    </LinearLayout>
+                <Button
+                    android:id="@+id/all_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="@string/all"
+                    />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/most_popular"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"/>
+                <Button
+                    android:id="@+id/keep_fit_matches_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/keep_fit_matches"
+                    android:enabled="false"/>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/most_popular"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -62,6 +69,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/search_and_match"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:background="@drawable/search_match"
@@ -217,10 +225,10 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/access_now_button"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
-                android:text="@string/access_now"
-                android:background="@drawable/access_now_image_background_layer_list"
+                android:background="@drawable/access_now"
                 android:layout_margin="5dp"
                 android:paddingStart="150dp"
                 android:paddingEnd="0dp"
@@ -229,13 +237,14 @@
 
         </LinearLayout>
 
-    </ScrollView>
 
-    <Button
-        android:id="@+id/signup_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sign_up"
-        android:layout_weight="0"/>
+        <Button
+            android:id="@+id/signup_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up"
+            android:layout_weight="0"/>
 
-</LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

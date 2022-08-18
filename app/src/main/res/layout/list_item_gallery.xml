@@ -5,8 +5,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:layout_width="80dp"
+        android:id="@+id/gallery_image_view"
+        android:layout_width="120dp"
         android:layout_height="80dp"
-        app:shapeAppearanceOverlay="@style/ImageView.Corner" />
+        app:shapeAppearanceOverlay="@style/ImageView.Corner"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"/>
 
 </LinearLayout>

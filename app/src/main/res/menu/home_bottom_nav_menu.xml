@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home_menu_item"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/user_menu_item"
-        android:icon="@drawable/ic_outline_person_24"
-        android:title="@string/user" />
+        android:id="@+id/exerciseListFragment"
+        android:icon="@drawable/search_match"
+        android:title="@string/exercises" />
 
     <item
         android:id="@+id/add_menu_item"
@@ -17,12 +17,12 @@
         android:title="@string/add" />
 
     <item
-        android:id="@+id/search_menu_item"
-        android:icon="@drawable/search_match"
-        android:title="@string/search" />
+        android:id="@+id/userFragment"
+        android:icon="@drawable/ic_outline_person_24"
+        android:title="@string/user" />
 
     <item
-        android:id="@+id/notifications_menu_item"
+        android:id="@+id/notificationListFragment"
         android:icon="@drawable/ic_baseline_notifications_none_24"
         android:title="@string/notifications" />
 

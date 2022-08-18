@@ -24,7 +24,7 @@ public class EnterDetailsFragment extends Fragment {
 
         binding.confirmDetailsButton.setOnClickListener(buttonView -> {
             NavDirections action = EnterDetailsFragmentDirections
-                    .actionEnterDetailsFragmentToHomeContainerFragment();
+                    .actionEnterDetailsFragmentToStep2Fragment();
             Navigation.findNavController(buttonView).navigate(action);
         });
         return view;

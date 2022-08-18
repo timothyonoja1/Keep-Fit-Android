@@ -27,7 +27,18 @@ public class MainFragment extends Fragment {
         binding.keepFitMatchesButton.setOnClickListener(buttonView -> {
             binding.allButton.setEnabled(false);
         });
+        binding.searchAndMatch.setOnClickListener(textView -> {
+            NavDirections action = MainFragmentDirections
+                    .actionMainFragmentToStep1Fragment();
+            Navigation.findNavController(textView).navigate(action);
+        });
+
         binding.signupButton.setOnClickListener(buttonView -> {
+            NavDirections action = MainFragmentDirections
+                    .actionMainFragmentToRegisterFragment();
+            Navigation.findNavController(buttonView).navigate(action);
+        });
+        binding.accessNowButton.setOnClickListener(buttonView -> {
             NavDirections action = MainFragmentDirections
                     .actionMainFragmentToRegisterFragment();
             Navigation.findNavController(buttonView).navigate(action);

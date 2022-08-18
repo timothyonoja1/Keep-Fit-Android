@@ -23,7 +23,7 @@ public class ForgotPasswordFragment extends Fragment {
         View view = binding.getRoot();
         binding.sendButton.setOnClickListener(buttonView -> {
             NavDirections action = ForgotPasswordFragmentDirections
-                    .actionForgotPasswordFragmentToHomeContainerFragment();
+                    .actionForgotPasswordFragmentToHomeFragment();
             Navigation.findNavController(buttonView).navigate(action);
         });
         return view;

@@ -1,84 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="20dp"
-    android:orientation="vertical">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/good_morning"
-        android:textSize="20sp"/>
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:padding="20dp"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/david"
-            android:textSize="30sp"
-            android:layout_marginBottom="10dp"/>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/good_morning"
+                android:textSize="15sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/david"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="10dp"/>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="@string/t_t_218_n_sessions"
-            android:layout_marginBottom="10dp"/>
-    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="@string/t_t_218_n_sessions"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="@string/search"
-        android:padding="10dp"
-        android:layout_marginBottom="15dp"
-        android:background="#1000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="@string/search"
+                android:padding="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="#1000"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/all_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
+                <Button
+                    android:id="@+id/all_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
 
-            android:text="@string/all" />
+                    android:text="@string/all" />
 
-        <Button
-            android:id="@+id/keep_fit_matches_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="10dp"
-            android:text="@string/keep_fit_matches"
-            android:enabled="false"/>
+                <Button
+                    android:id="@+id/keep_fit_matches_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/keep_fit_matches"
+                    android:enabled="false"/>
 
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/most_popular"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/most_popular"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"/>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -98,6 +105,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/search_and_match"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:background="@drawable/search_match"
@@ -108,6 +116,7 @@
                         android:layout_margin="5dp"/>
 
                     <TextView
+                        android:id="@+id/nutritional_plans"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:background="@drawable/nutritional_plans"
@@ -117,6 +126,7 @@
                         android:paddingEnd="0dp" />
 
                     <TextView
+                        android:id="@+id/fitness_buddies"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:background="@drawable/fitness_buddies"
@@ -127,6 +137,7 @@
                         android:layout_margin="5dp" />
 
                     <TextView
+                        android:id="@+id/physio_active"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:background="@drawable/physio_active"
@@ -144,6 +155,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/fitness_programmes"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:layout_margin="5dp"
@@ -153,6 +165,7 @@
                         android:paddingEnd="0dp" />
 
                     <TextView
+                        android:id="@+id/live_fitness"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:layout_margin="5dp"
@@ -163,6 +176,7 @@
                         android:paddingEnd="0dp" />
 
                     <TextView
+                        android:id="@+id/groups"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:layout_margin="5dp"
@@ -173,6 +187,7 @@
                         android:paddingEnd="0dp"/>
 
                     <TextView
+                        android:id="@+id/training_spots"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:layout_margin="5dp"
@@ -183,7 +198,9 @@
 
                 </LinearLayout>
             </LinearLayout>
+
             <TextView
+                android:id="@+id/train_with_a_champion"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:background="@drawable/train_with_a_champion"
@@ -205,6 +222,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/challenges"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:background="@drawable/challenges"
@@ -214,6 +232,7 @@
                         android:paddingTop="25dp"
                         android:layout_margin="5dp" />
                     <TextView
+                        android:id="@+id/my_videos"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:background="@drawable/my_videos"
@@ -231,6 +250,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/my_photos"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:background="@drawable/my_photos"
@@ -241,6 +261,7 @@
                         android:layout_margin="5dp" />
 
                     <TextView
+                        android:id="@+id/my_products"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:background="@drawable/products"
@@ -250,13 +271,9 @@
                         android:paddingEnd="0dp" />
 
                 </LinearLayout>
-
             </LinearLayout>
-
-
-
         </LinearLayout>
 
-    </ScrollView>
+    </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

@@ -23,7 +23,7 @@ public class LoginFragment extends Fragment {
         View view = binding.getRoot();
         binding.loginButtonEditText.setOnClickListener(buttonView -> {
             NavDirections action = LoginFragmentDirections
-                    .actionLoginFragmentToHomeContainerFragment();
+                    .actionLoginFragmentToHomeFragment();
             Navigation.findNavController(buttonView).navigate(action);
         });
         binding.forgotPasswordLinkTextView.setOnClickListener(buttonView -> {

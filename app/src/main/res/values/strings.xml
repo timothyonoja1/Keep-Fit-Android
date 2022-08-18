@@ -47,7 +47,7 @@
     <string name="groups_15">Groups(15)</string>
     <string name="physio_active_n_t_t_t_46">Physio Active \n \t \t \t (46)</string>
     <string name="t_t_fitness_n_programmes">\t \t Fitness \n Programmes</string>
-    <string name="live">Live</string>
+    <string name="liveFitness">Live</string>
     <string name="training">Training</string>
     <string name="train_with_a_champion">Train with a champion</string>
     <string name="access_now">Access now</string>
@@ -142,4 +142,23 @@
     <string name="about_icon">About icon</string>
     <string name="logout_icon">Logout icon</string>
     <string name="arrow_icon">Arrow icon</string>
+    <string name="choose_fitness_n_programmes">Choose Fitness \n Programmes</string>
+    <string name="choose_n_nutrition_plans">Choose \n Nutrition Plans</string>
+    <string name="hello_nice_to_meet_n_you_david">Hello, nice to meet \n you David!</string>
+    <string name="set_your_location">Set your location to find training spots around you</string>
+    <string name="use_current_location">Use current location</string>
+    <string name="we_only_use">We only access your location while you are using the Keep Fit app</string>
+    <string name="or_set_your_location_manually">or set your location manually</string>
+    <string name="challenge_of_the_week">Challenge of the week</string>
+    <string name="wall_squats">Wall Squats</string>
+    <string name="test_the_strength_of_your_squats">Test the strength of your squats</string>
+    <string name="total_1000_squats">Total: 1000 Squats</string>
+    <string name="total_duration_25_minutes">Total Duration 25 minutes</string>
+    <string name="progress">Progress</string>
+    <string name="start">Start</string>
+    <string name="my_groups">My Groups</string>
+    <string name="delete_icon">Delete icon</string>
+    <string name="group_image">Group image</string>
+    <string name="walkout">Walkout</string>
+    <string name="exercises">Exercises</string>
 </resources>

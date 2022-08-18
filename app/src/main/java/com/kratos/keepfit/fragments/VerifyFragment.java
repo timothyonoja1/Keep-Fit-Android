@@ -23,7 +23,7 @@ public class VerifyFragment extends Fragment {
         View view = binding.getRoot();
         binding.verifyButton.setOnClickListener(buttonView -> {
             NavDirections action = VerifyFragmentDirections
-                    .actionVerifyFragmentToHomeContainerFragment();
+                    .actionVerifyFragmentToHomeFragment();
             Navigation.findNavController(buttonView).navigate(action);
         });
         binding.signInLinkTextView.setOnClickListener(buttonView -> {

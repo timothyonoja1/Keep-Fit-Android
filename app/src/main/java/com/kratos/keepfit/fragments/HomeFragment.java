@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
+
 import com.kratos.keepfit.databinding.FragmentHomeBinding;
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -24,6 +27,36 @@ public class HomeFragment extends Fragment {
         });
         binding.keepFitMatchesButton.setOnClickListener(buttonView -> {
             binding.allButton.setEnabled(false);
+        });
+        binding.fitnessProgrammes.setOnClickListener(imageView -> {
+            NavDirections action = HomeFragmentDirections
+                    .actionHomeFragmentToFitnessProgrammesFragment();
+            Navigation.findNavController(imageView).navigate(action);
+        });
+        binding.nutritionalPlans.setOnClickListener(imageView -> {
+            NavDirections action = HomeFragmentDirections
+                    .actionHomeFragmentToNutritionalPlansFragment();
+            Navigation.findNavController(imageView).navigate(action);
+        });
+        binding.liveFitness.setOnClickListener(imageView -> {
+            NavDirections action = HomeFragmentDirections
+                    .actionHomeFragmentToLiveFitnessFragment();
+            Navigation.findNavController(imageView).navigate(action);
+        });
+        binding.groups.setOnClickListener(imageView -> {
+            NavDirections action = HomeFragmentDirections
+                    .actionHomeFragmentToGroupListFragment();
+            Navigation.findNavController(imageView).navigate(action);
+        });
+        binding.trainingSpots.setOnClickListener(imageView -> {
+            NavDirections action = HomeFragmentDirections
+                    .actionHomeFragmentToSetLocationFragment();
+            Navigation.findNavController(imageView).navigate(action);
+        });
+        binding.challenges.setOnClickListener(imageView -> {
+            NavDirections action = HomeFragmentDirections
+                    .actionHomeFragmentToChallengesFragment();
+            Navigation.findNavController(imageView).navigate(action);
         });
         return view;
     }
