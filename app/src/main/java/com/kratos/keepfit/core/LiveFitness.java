@@ -1,19 +1,17 @@
 package com.kratos.keepfit.core;
 
-import android.graphics.drawable.Drawable;
-
 public class LiveFitness {
 
     private final int liveID;
     private final String name;
     private final String numberOfViews;
-    private final Drawable backgroundImage;
+    private final int backgroundImageDrawableResource;
 
-    public LiveFitness(int liveID, String name, String numberOfViews, Drawable backgroundImage) {
+    public LiveFitness(int liveID, String name, String numberOfViews, int backgroundImageDrawableResource) {
         this.liveID = liveID;
         this.name = name;
         this.numberOfViews = numberOfViews;
-        this.backgroundImage = backgroundImage;
+        this.backgroundImageDrawableResource = backgroundImageDrawableResource;
     }
 
     public int getLiveID() {
@@ -28,7 +26,7 @@ public class LiveFitness {
         return numberOfViews;
     }
 
-    public Drawable getBackgroundImage() {
-        return backgroundImage;
+    public int getbackgroundImageDrawableResource() {
+        return backgroundImageDrawableResource;
     }
 }

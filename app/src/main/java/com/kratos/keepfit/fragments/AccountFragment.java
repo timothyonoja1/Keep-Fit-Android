@@ -1,6 +1,5 @@
 package com.kratos.keepfit.fragments;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -67,8 +66,7 @@ public class AccountFragment extends Fragment {
         int i = 0;
         while (i < 3){
             int imageResource = getResources().getIdentifier(uris.get(i), null, requireActivity().getPackageName());
-            Drawable res = getResources().getDrawable(imageResource);
-            galleries.add(new Gallery(1, "", res));
+            galleries.add(new Gallery(1, uris.get(i), imageResource));
             ++i;
         }
 

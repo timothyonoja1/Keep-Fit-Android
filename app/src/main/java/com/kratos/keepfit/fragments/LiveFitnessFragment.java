@@ -54,8 +54,7 @@ public class LiveFitnessFragment extends Fragment {
         int i = 0;
         while (i < 4){
             int imageResource = getResources().getIdentifier(uris.get(i), null, requireActivity().getPackageName());
-            Drawable res = getResources().getDrawable(imageResource);
-            liveFitnessList.add(new LiveFitness(1, "", "", res));
+            liveFitnessList.add(new LiveFitness(1, "", "", imageResource));
             ++i;
         }
 
@@ -63,7 +62,7 @@ public class LiveFitnessFragment extends Fragment {
     }
 
     private void updateUI() {
-        LiveFitnessAdapter liveFitnessAdapter = new LiveFitnessAdapter(liveFitnessList);
+        LiveFitnessAdapter liveFitnessAdapter = new LiveFitnessAdapter(liveFitnessList, getContext());
         binding.recyclerView.setAdapter(liveFitnessAdapter);
     }
 

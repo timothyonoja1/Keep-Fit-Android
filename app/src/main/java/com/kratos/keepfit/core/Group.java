@@ -1,19 +1,17 @@
 package com.kratos.keepfit.core;
 
-import android.graphics.drawable.Drawable;
-
 public class Group {
 
     private final int GalleryID;
-    private final Drawable imageIcon;
+    private final int imageIconDrawableResource;
     private final String name;
     private final String status;
     private final String time;
 
-    public Group(int galleryID, Drawable imageIcon,
+    public Group(int galleryID, int imageIconDrawableResource,
                  String name, String status, String time) {
         GalleryID = galleryID;
-        this.imageIcon = imageIcon;
+        this.imageIconDrawableResource = imageIconDrawableResource;
         this.name = name;
         this.status = status;
         this.time = time;
@@ -23,8 +21,8 @@ public class Group {
         return GalleryID;
     }
 
-    public Drawable getImageIcon() {
-        return imageIcon;
+    public int getImageIconDrawableResource() {
+        return imageIconDrawableResource;
     }
 
     public String getName() {

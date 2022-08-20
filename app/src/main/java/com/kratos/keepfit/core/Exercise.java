@@ -7,9 +7,9 @@ public class Exercise {
     private final int exerciseId;
     private final String name;
     private final String details;
-    private final Drawable drawableResource;
+    private final int drawableResource;
 
-    public Exercise(int exerciseId, String name, String details, Drawable drawableResource) {
+    public Exercise(int exerciseId, String name, String details, int drawableResource) {
         this.exerciseId = exerciseId;
         this.name = name;
         this.details = details;
@@ -28,7 +28,7 @@ public class Exercise {
         return details;
     }
 
-    public Drawable getDrawableResource() {
+    public int getDrawableResource() {
         return drawableResource;
     }
 }

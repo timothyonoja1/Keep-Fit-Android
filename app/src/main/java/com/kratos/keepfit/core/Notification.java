@@ -8,10 +8,10 @@ public class Notification {
     private final String displayText;
     private final String message;
     private final String postedDate;
-    private final Drawable drawableResource;
+    private final int drawableResource;
 
     public Notification(int notificationID, String displayText,
-                        String message, String postedDate, Drawable drawableResource) {
+                        String message, String postedDate, int drawableResource) {
         this.notificationID = notificationID;
         this.displayText = displayText;
         this.message = message;
@@ -35,7 +35,7 @@ public class Notification {
         return postedDate;
     }
 
-    public Drawable getDrawableResource() {
+    public int getDrawableResource() {
         return drawableResource;
     }
 }

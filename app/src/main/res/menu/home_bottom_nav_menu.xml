@@ -19,7 +19,7 @@
     <item
         android:id="@+id/accountFragment"
         android:icon="@drawable/ic_outline_person_24"
-        android:title="@string/user" />
+        android:title="@string/account" />
 
     <item
         android:id="@+id/notificationListFragment"

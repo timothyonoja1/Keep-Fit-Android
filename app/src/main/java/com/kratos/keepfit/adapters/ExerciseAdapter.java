@@ -1,6 +1,7 @@
 package com.kratos.keepfit.adapters;
 
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,17 +11,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.kratos.keepfit.R;
 import com.kratos.keepfit.core.Exercise;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.ExerciseHolder> {
 
     private final List<Exercise> exercises;
+    private final Context context;
 
-    public ExerciseAdapter(List<Exercise> exercises){
+    public ExerciseAdapter(List<Exercise> exercises, Context context){
         this.exercises = exercises;
+        this.context = context;
     }
 
-    protected static class ExerciseHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    protected class ExerciseHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private final View itemView;
         private final ImageView favoriteIcon;
@@ -52,7 +57,18 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
         public void bind(Exercise exercise){
             this.exercise = exercise;
-            itemView.setBackground(exercise.getDrawableResource());
+            ImageView img = new ImageView(context);
+            Picasso.get().load(exercise.getDrawableResource()).into(img, new Callback() {
+                @Override
+                public void onSuccess() {
+                    itemView.setBackground(img.getDrawable());
+                }
+
+                @Override
+                public void onError(Exception e) {
+
+                }
+            });
         }
 
         @Override

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kratos.keepfit.R;
 import com.kratos.keepfit.core.Notification;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
             this.notification = notification;
             notificationTextTextView.setText(notification.getDisplayText());
             notificationTimeTextView.setText(notification.getPostedDate());
-            notificationImage.setImageDrawable(notification.getDrawableResource());
+            Picasso.get().load(notification.getDrawableResource()).into(notificationImage);
         }
 
         @Override

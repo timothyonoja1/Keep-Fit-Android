@@ -50,17 +50,17 @@ public class ExerciseListFragment extends Fragment {
 
         int imageResource = getResources().getIdentifier(uri1, null, requireActivity().getPackageName());
         Drawable res = getResources().getDrawable(imageResource);
-        exercises.add(new Exercise(1, "", "", res));
+        exercises.add(new Exercise(1, "", "", imageResource));
 
         imageResource = getResources().getIdentifier(uri2, null, requireActivity().getPackageName());
         res = getResources().getDrawable(imageResource);
-        exercises.add(new Exercise(2, "", "", res));
+        exercises.add(new Exercise(2, "", "", imageResource));
 
         updateUI();
     }
 
     private void updateUI(){
-        ExerciseAdapter exerciseAdapter = new ExerciseAdapter(exercises);
+        ExerciseAdapter exerciseAdapter = new ExerciseAdapter(exercises, requireContext());
         binding.recyclerView.setAdapter(exerciseAdapter);
     }
 

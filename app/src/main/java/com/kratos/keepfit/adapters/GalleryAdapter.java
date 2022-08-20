@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.kratos.keepfit.R;
 import com.kratos.keepfit.core.Gallery;
+import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.GalleryHolder> {
@@ -31,7 +32,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.GalleryH
 
         public void bind(Gallery gallery){
             this.gallery = gallery;
-            galleryImageView.setImageDrawable(gallery.getDrawableResource());
+            Picasso.get().load(gallery.getDrawableResource()).into(galleryImageView);
         }
 
         @Override

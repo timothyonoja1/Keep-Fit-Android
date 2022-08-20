@@ -1,26 +1,31 @@
 package com.kratos.keepfit.adapters;
 
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.kratos.keepfit.R;
 import com.kratos.keepfit.core.LiveFitness;
-
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class LiveFitnessAdapter extends RecyclerView.Adapter<LiveFitnessAdapter.LiveFitnessHolder> {
 
     private final List<LiveFitness> lives;
+    private final Context context;
 
-    public LiveFitnessAdapter(List<LiveFitness> lives){
+    public LiveFitnessAdapter(List<LiveFitness> lives, Context context){
         this.lives = lives;
+        this.context = context;
     }
 
-    protected static class LiveFitnessHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    protected class LiveFitnessHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private View itemView;
         private final TextView nameTextView;
@@ -37,9 +42,20 @@ public class LiveFitnessAdapter extends RecyclerView.Adapter<LiveFitnessAdapter.
 
         public void bind(LiveFitness liveFitness){
             this.liveFitness = liveFitness;
-            itemView.setBackground(liveFitness.getBackgroundImage());
             nameTextView.setText(liveFitness.getName());
             numberOfViews.setText(liveFitness.getNumberOfViews());
+            ImageView img = new ImageView(context);
+            Picasso.get().load(liveFitness.getbackgroundImageDrawableResource()).into(img, new Callback() {
+                @Override
+                public void onSuccess() {
+                    itemView.setBackground(img.getDrawable());
+                }
+
+                @Override
+                public void onError(Exception e) {
+
+                }
+            });
         }
 
         @Override

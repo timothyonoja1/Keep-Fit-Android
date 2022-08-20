@@ -173,4 +173,5 @@
     <string name="location_icon">Location icon</string>
     <string name="verified_icon">Verified icon</string>
     <string name="waiting_to_accept">Waiting to accept</string>
+    <string name="account">Account</string>
 </resources>

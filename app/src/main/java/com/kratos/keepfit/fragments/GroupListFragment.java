@@ -54,8 +54,7 @@ public class GroupListFragment extends Fragment {
         int i = 0;
         while (i < 4){
             int imageResource = getResources().getIdentifier(uris.get(i), null, requireActivity().getPackageName());
-            Drawable res = getResources().getDrawable(imageResource);
-            groups.add(new Group(i, res, names.get(i), "Awaiting Confirmation", "At 10:00AM"));
+            groups.add(new Group(i, imageResource, names.get(i), "Awaiting Confirmation", "At 10:00AM"));
             ++i;
         }
         updateUI();

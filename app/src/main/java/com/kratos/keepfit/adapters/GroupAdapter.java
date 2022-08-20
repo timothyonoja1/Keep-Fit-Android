@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.kratos.keepfit.R;
 import com.kratos.keepfit.core.Group;
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.GroupHolder> {
@@ -41,7 +43,7 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.GroupHolder>
 
         public void bind(Group group){
             this.group = group;
-            imageIconImageView.setImageDrawable(group.getImageIcon());
+            Picasso.get().load(group.getImageIconDrawableResource()).into(imageIconImageView);
             groupNameTextView.setText(group.getName());
             statusTextView.setText(group.getStatus());
             timeTextView.setText(group.getTime());

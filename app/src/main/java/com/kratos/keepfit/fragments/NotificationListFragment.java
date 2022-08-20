@@ -42,7 +42,7 @@ public class NotificationListFragment extends Fragment {
         uris.add("@drawable/tania_dp");
         uris.add("@drawable/tania_dp");
         uris.add("@drawable/adeola_dp");
-        uris.add("@drawable/ic_baseline_star_24");
+        uris.add("@drawable/star_screenshot");
 
         List<String> notificationText = new ArrayList<>();
         notificationText.add("Tonia Hardy Posted 2 new Pics ");
@@ -63,11 +63,9 @@ public class NotificationListFragment extends Fragment {
         int i = 0;
         while (i < 6) {
             int imageResource = getResources().getIdentifier(uris.get(i), null, requireActivity().getPackageName());
-            Drawable res = getResources().getDrawable(imageResource);
-            notifications.add(new Notification(1, notificationText.get(i), "", dates.get(i), res));
+            notifications.add(new Notification(i, notificationText.get(i), "", dates.get(i), imageResource));
             ++i;
         }
-
         updateUI();
     }
 

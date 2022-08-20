@@ -66,8 +66,7 @@ public class FitnessBuddiesTopFragment  extends Fragment {
         int i = 0;
         while (i < 4){
             int imageResource = getResources().getIdentifier(uris.get(i), null, requireActivity().getPackageName());
-            Drawable res = getResources().getDrawable(imageResource);
-            fitnessBuddyList.add(new FitnessBuddy(names.get(i), "", "", description.get(i), res));
+            fitnessBuddyList.add(new FitnessBuddy(names.get(i), "", "", description.get(i), imageResource));
             pendingAcceptanceNames.add(pendingNames.get(i));
             ++i;
         }

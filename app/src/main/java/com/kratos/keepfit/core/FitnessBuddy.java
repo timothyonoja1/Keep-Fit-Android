@@ -1,16 +1,14 @@
 package com.kratos.keepfit.core;
 
-import android.graphics.drawable.Drawable;
-
 public class FitnessBuddy {
 
     private final String name;
     private final String location;
     private final String category;
     private final String description;
-    private final Drawable drawableResource;
+    private final int drawableResource;
 
-    public FitnessBuddy(String name, String location, String category, String description, Drawable drawableResource) {
+    public FitnessBuddy(String name, String location, String category, String description, int drawableResource) {
         this.name = name;
         this.location = location;
         this.category = category;
@@ -34,7 +32,7 @@ public class FitnessBuddy {
         return description;
     }
 
-    public Drawable getDrawableResource() {
+    public int getDrawableResource() {
         return drawableResource;
     }
 }

@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.kratos.keepfit.R;
 import com.kratos.keepfit.core.FitnessBuddy;
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class FitnessBuddyAdapter extends RecyclerView.Adapter<FitnessBuddyAdapter.FitnessBuddyHolder> {
@@ -31,13 +33,14 @@ public class FitnessBuddyAdapter extends RecyclerView.Adapter<FitnessBuddyAdapte
             nameTextTextView = itemView.findViewById(R.id.name_text_view);
             detailsTextView = itemView.findViewById(R.id.details_text_view);
             imageView = itemView.findViewById(R.id.image_view);
+
         }
 
         public void bind(FitnessBuddy fitnessBuddy){
             this.fitnessBuddy = fitnessBuddy;
             nameTextTextView.setText(fitnessBuddy.getName());
             detailsTextView.setText(fitnessBuddy.getDescription());
-            imageView.setImageDrawable(fitnessBuddy.getDrawableResource());
+            Picasso.get().load(fitnessBuddy.getDrawableResource()).into(imageView);
         }
 
         @Override
