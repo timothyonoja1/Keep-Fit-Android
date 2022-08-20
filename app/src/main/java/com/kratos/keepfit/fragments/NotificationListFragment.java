@@ -5,13 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import com.kratos.keepfit.R;
 import com.kratos.keepfit.adapters.NotificationAdapter;
 import com.kratos.keepfit.core.Notification;
 import com.kratos.keepfit.databinding.FragmentNotificationListBinding;
@@ -39,23 +35,39 @@ public class NotificationListFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
-        String uri = "@drawable/anthony";
 
-        int imageResource = getResources().getIdentifier(uri, null, requireActivity().getPackageName());
-        Drawable res = getResources().getDrawable(imageResource);
+        List<String> uris = new ArrayList<>();
+        uris.add("@drawable/tania_dp");
+        uris.add("@drawable/leon_small_dp");
+        uris.add("@drawable/tania_dp");
+        uris.add("@drawable/tania_dp");
+        uris.add("@drawable/adeola_dp");
+        uris.add("@drawable/ic_baseline_star_24");
 
-        notifications.add(new Notification(1, "Tonia Hardy Posted 2 new Pics",
-                "", "10:00 PM", res));
-        notifications.add(new Notification(2, "Pure Gym Hackney has left some feedback on your profile",
-                "", "9:00 PM", res));
-        notifications.add(new Notification(3, "Tonia Hardy licked your workout, Circuit Training Fundamentals",
-                "", "Yesterday", res));
-        notifications.add(new Notification(4, "Tonia Hardy comfirmed your buddy request",
-                "", "Tuesday", res));
-        notifications.add(new Notification(5, "Adeola comfirmed your buddy request",
-                "", "Monday", res));
-        notifications.add(new Notification(6, "WELL DONE! You have completed 20 minutes of Circuit Training Fundamentals",
-                "", "Monday", res));
+        List<String> notificationText = new ArrayList<>();
+        notificationText.add("Tonia Hardy Posted 2 new Pics ");
+        notificationText.add("Pure Gym Hackney has left some feedback on your profile");
+        notificationText.add("Tonia Hardy licked your workout, Circuit Training Fundamentals");
+        notificationText.add("Tonia Hardy confirmed your buddy request");
+        notificationText.add("Adeola comfirmed your buddy request");
+        notificationText.add("WELL DONE! You have completed 20 minutes of Circuit Training Fundamentals");
+
+        List<String> dates = new ArrayList<>();
+        dates.add("10:00 PM");
+        dates.add("9:00 PM");
+        dates.add("Yesterday");
+        dates.add("Tuesday");
+        dates.add("Monday");
+        dates.add("Monday");
+
+        int i = 0;
+        while (i < 6) {
+            int imageResource = getResources().getIdentifier(uris.get(i), null, requireActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            notifications.add(new Notification(1, notificationText.get(i), "", dates.get(i), res));
+            ++i;
+        }
+
         updateUI();
     }
 

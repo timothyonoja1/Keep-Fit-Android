@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
+import com.kratos.keepfit.R;
 import com.kratos.keepfit.databinding.FragmentHomeBinding;
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -23,14 +24,21 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
         binding.allButton.setOnClickListener(buttonView -> {
-            binding.keepFitMatchesButton.setEnabled(false);
+            binding.allButton.setBackgroundColor(getResources().getColor(R.color.dark_primary));
+            binding.keepFitMatchesButton.setBackgroundColor(getResources().getColor(R.color.white));
         });
         binding.keepFitMatchesButton.setOnClickListener(buttonView -> {
-            binding.allButton.setEnabled(false);
+            binding.keepFitMatchesButton.setBackgroundColor(getResources().getColor(R.color.dark_primary));
+            binding.allButton.setBackgroundColor(getResources().getColor(R.color.light_grey));
         });
         binding.fitnessProgrammes.setOnClickListener(imageView -> {
             NavDirections action = HomeFragmentDirections
                     .actionHomeFragmentToFitnessProgrammesFragment();
+            Navigation.findNavController(imageView).navigate(action);
+        });
+        binding.fitnessBuddies.setOnClickListener(imageView -> {
+            NavDirections action = HomeFragmentDirections
+                    .actionHomeFragmentToFitnessBuddiesContainerFragment();
             Navigation.findNavController(imageView).navigate(action);
         });
         binding.nutritionalPlans.setOnClickListener(imageView -> {

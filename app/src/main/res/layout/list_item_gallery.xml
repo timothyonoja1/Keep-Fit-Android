@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="150dp"
+    android:layout_height="90dp"
+    android:paddingTop="10dp"
+    android:layout_marginEnd="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/gallery_image_view"
-        android:layout_width="120dp"
-        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:shapeAppearanceOverlay="@style/ImageView.Corner"
-        android:scaleType="centerInside"
+        android:scaleType="center"
         android:adjustViewBounds="true"/>
 
 </LinearLayout>

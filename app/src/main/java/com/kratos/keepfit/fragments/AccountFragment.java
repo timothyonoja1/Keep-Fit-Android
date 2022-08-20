@@ -16,31 +16,30 @@ import com.kratos.keepfit.adapters.SpecialityAdapter;
 import com.kratos.keepfit.core.Gallery;
 import com.kratos.keepfit.core.Schedule;
 import com.kratos.keepfit.core.Speciality;
-import com.kratos.keepfit.databinding.FragmentUserBinding;
+import com.kratos.keepfit.databinding.FragmentAccountBinding;
 import java.util.ArrayList;
 import java.util.List;
 import dagger.hilt.android.AndroidEntryPoint;
 
 /** Fragment for user log in. */
 @AndroidEntryPoint
-public class UserFragment extends Fragment {
+public class AccountFragment extends Fragment {
 
-    private FragmentUserBinding binding;
+    private FragmentAccountBinding binding;
     private final List<Speciality> specialities = new ArrayList<>();
     private final List<Gallery> galleries = new ArrayList<>();
     private final List<Schedule> schedules = new ArrayList<>();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentUserBinding.inflate(inflater, container, false);
+        binding = FragmentAccountBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
         binding.notificationImage.setOnClickListener(imageView -> {
-            NavDirections action = UserFragmentDirections
-                    .actionUserFragmentToProfileFragment();
+            NavDirections action = AccountFragmentDirections
+                    .actionAccountFragmentToProfileFragment();
             Navigation.findNavController(imageView).navigate(action);
         });
-        binding.specialityListRecyclerView.setLayoutManager(
-                new LinearLayoutManager(getActivity()));
+        binding.specialityListRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         binding.galleryListRecyclerView.setLayoutManager(
                 new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
@@ -60,15 +59,18 @@ public class UserFragment extends Fragment {
         specialities.add(new Speciality(4, "Athletic event or competition"));
         specialities.add(new Speciality(5, "Other injuries or medical conditions"));
 
-        String uri = "@drawable/anthony";
+        List<String> uris = new ArrayList<>();
+        uris.add("@drawable/gallery_1");
+        uris.add("@drawable/gallery_2");
+        uris.add("@drawable/gallery_1");
 
-        int imageResource = getResources().getIdentifier(uri, null, requireActivity().getPackageName());
-        Drawable res = getResources().getDrawable(imageResource);
-
-        galleries.add(new Gallery(1, "", res));
-        galleries.add(new Gallery(2, "", res));
-        galleries.add(new Gallery(3, "", res));
-        galleries.add(new Gallery(4, "", res));
+        int i = 0;
+        while (i < 3){
+            int imageResource = getResources().getIdentifier(uris.get(i), null, requireActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            galleries.add(new Gallery(1, "", res));
+            ++i;
+        }
 
         schedules.add(new Schedule(1, "07:30 AM", "Available"));
         schedules.add(new Schedule(2, "08:00 AM", "Available"));

@@ -8,6 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
+
+import com.kratos.keepfit.R;
 import com.kratos.keepfit.databinding.FragmentMainBinding;
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -22,10 +24,12 @@ public class MainFragment extends Fragment {
         binding = FragmentMainBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
         binding.allButton.setOnClickListener(buttonView -> {
-            binding.keepFitMatchesButton.setEnabled(false);
+            binding.allButton.setBackgroundColor(getResources().getColor(R.color.dark_primary));
+            binding.keepFitMatchesButton.setBackgroundColor(getResources().getColor(R.color.white));
         });
         binding.keepFitMatchesButton.setOnClickListener(buttonView -> {
-            binding.allButton.setEnabled(false);
+            binding.keepFitMatchesButton.setBackgroundColor(getResources().getColor(R.color.dark_primary));
+            binding.allButton.setBackgroundColor(getResources().getColor(R.color.light_grey));
         });
         binding.searchAndMatch.setOnClickListener(textView -> {
             NavDirections action = MainFragmentDirections

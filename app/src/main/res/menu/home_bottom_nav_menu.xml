@@ -17,7 +17,7 @@
         android:title="@string/add" />
 
     <item
-        android:id="@+id/userFragment"
+        android:id="@+id/accountFragment"
         android:icon="@drawable/ic_outline_person_24"
         android:title="@string/user" />
 

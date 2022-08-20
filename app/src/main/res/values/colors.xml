@@ -13,4 +13,5 @@
     <color name="dark_primary">#1976D2</color>
     <color name="accent">#03A9F4</color>
     <color name="light_primary">#BBDEFB</color>
+    <color name="light_grey">#C1C1C1</color>
 </resources>

@@ -12,7 +12,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 
 /** Fragment for user log in. */
 @AndroidEntryPoint
-public class FitnessProgrammesFragments extends Fragment {
+public class FitnessProgrammesFragment extends Fragment {
 
     private FragmentFitnessProgrammesBinding binding;
 

@@ -4,7 +4,7 @@
     android:layout_height="70dp"
     android:orientation="vertical"
     android:background="@drawable/rounded_corner_background"
-    android:paddingTop="10dp"
+   android:gravity="center"
     android:layout_marginEnd="10dp">
 
     <TextView

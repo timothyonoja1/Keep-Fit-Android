@@ -68,10 +68,12 @@
         android:name="com.kratos.keepfit.fragments.HomeFragment"
         android:label="Home Fragment"
         tools:layout="@layout/fragment_home">
-
         <action
             android:id="@+id/action_homeFragment_to_fitnessProgrammesFragment"
             app:destination="@id/fitnessProgrammesFragment"/>
+        <action
+            android:id="@+id/action_homeFragment_to_fitnessBuddiesContainerFragment"
+            app:destination="@id/fitnessBuddiesContainerFragment"/>
         <action
             android:id="@+id/action_homeFragment_to_nutritionalPlansFragment"
             app:destination="@id/nutritionalPlansFragment"/>
@@ -92,9 +94,33 @@
 
     <fragment
         android:id="@+id/fitnessProgrammesFragment"
-        android:name="com.kratos.keepfit.fragments.FitnessProgrammesFragments"
+        android:name="com.kratos.keepfit.fragments.FitnessProgrammesFragment"
         android:label="Fitness Programmes Fragment"
         tools:layout="@layout/fragment_fitness_programmes">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fitnessBuddiesContainerFragment"
+        android:name="com.kratos.keepfit.fragments.FitnessBuddiesContainerFragment"
+        android:label="Fitness Buddies Container Fragment"
+        tools:layout="@layout/fragment_fitness_buddies_container">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fitnessBuddiesAllFragment"
+        android:name="com.kratos.keepfit.fragments.FitnessBuddiesAllFragment"
+        android:label="Fitness Buddies All Fragment"
+        tools:layout="@layout/fragment_fitness_buddies_all">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fitnessBuddiesTopFragment"
+        android:name="com.kratos.keepfit.fragments.FitnessBuddiesTopFragment"
+        android:label="Fitness Buddies Top Fragment"
+        tools:layout="@layout/fragment_fitness_buddies_top">
 
     </fragment>
 
@@ -147,13 +173,23 @@
     </fragment>
 
     <fragment
-        android:id="@+id/userFragment"
-        android:name="com.kratos.keepfit.fragments.UserFragment"
+        android:id="@+id/accountFragment"
+        android:name="com.kratos.keepfit.fragments.AccountFragment"
         android:label="User Fragment"
-        tools:layout="@layout/fragment_user">
+        tools:layout="@layout/fragment_account">
         <action
-            android:id="@+id/action_userFragment_to_profileFragment"
+            android:id="@+id/action_accountFragment_to_profileFragment"
             app:destination="@id/profileFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/exerciseListFragment"
+        android:name="com.kratos.keepfit.fragments.ExerciseListFragment"
+        android:label="User Fragment"
+        tools:layout="@layout/fragment_exercise_list">
+        <action
+            android:id="@+id/action_exerciseListFragment_to_accountFragment"
+            app:destination="@id/accountFragment"/>
     </fragment>
 
     <fragment

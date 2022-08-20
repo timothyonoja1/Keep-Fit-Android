@@ -119,7 +119,9 @@
             android:id="@+id/gallery_list_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"/>
 
         <TextView
             android:layout_width="wrap_content"

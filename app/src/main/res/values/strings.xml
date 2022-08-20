@@ -161,4 +161,16 @@
     <string name="group_image">Group image</string>
     <string name="walkout">Walkout</string>
     <string name="exercises">Exercises</string>
+    <string name="favorite_icon">Favorite icon</string>
+    <string name="check_icon">Check icon</string>
+    <string name="headline_icon">Headline icon</string>
+    <string name="forward_icon">Forward_icon</string>
+    <string name="adjust_icon">Adjust icon</string>
+    <string name="person_add_icon">Person add icon</string>
+    <string name="icon">Icon</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_icon">Add icon</string>
+    <string name="location_icon">Location icon</string>
+    <string name="verified_icon">Verified icon</string>
+    <string name="waiting_to_accept">Waiting to accept</string>
 </resources>
