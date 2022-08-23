@@ -1,6 +1,5 @@
 package com.kratos.keepfit.fragments;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,11 +9,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.kratos.keepfit.adapters.FitnessBuddyAdapter;
 import com.kratos.keepfit.adapters.PendingAcceptanceAdapter;
-import com.kratos.keepfit.core.FitnessBuddy;
+import com.kratos.keepfit.entities.FitnessBuddy;
 import com.kratos.keepfit.databinding.FragmentFitnessBuddiesTopBinding;
 import java.util.ArrayList;
 import java.util.List;
-
 import dagger.hilt.android.AndroidEntryPoint;
 
 /** Fragment for user log in. */
@@ -22,8 +20,6 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class FitnessBuddiesTopFragment  extends Fragment {
 
     private FragmentFitnessBuddiesTopBinding binding;
-    private final List<FitnessBuddy> fitnessBuddyList = new ArrayList<>();
-    private final List<String> pendingAcceptanceNames = new ArrayList<>();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -63,6 +59,9 @@ public class FitnessBuddiesTopFragment  extends Fragment {
         description.add("0.48 mi away. Boxing");
         description.add("1.47 mi away. Body Building");
 
+        List<FitnessBuddy> fitnessBuddyList = new ArrayList<>();
+        List<String> pendingAcceptanceNames = new ArrayList<>();
+
         int i = 0;
         while (i < 4){
             int imageResource = getResources().getIdentifier(uris.get(i), null, requireActivity().getPackageName());
@@ -71,11 +70,10 @@ public class FitnessBuddiesTopFragment  extends Fragment {
             ++i;
         }
 
-        updateUI();
-
+        updateUI(fitnessBuddyList, pendingAcceptanceNames);
     }
 
-    private void updateUI() {
+    private void updateUI(List<FitnessBuddy> fitnessBuddyList, List<String> pendingAcceptanceNames) {
         FitnessBuddyAdapter fitnessBuddyAdapter = new FitnessBuddyAdapter(fitnessBuddyList);
         binding.fitnessBuddiesRecyclerView.setAdapter(fitnessBuddyAdapter);
 

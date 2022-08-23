@@ -16,7 +16,6 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class FitnessBuddiesContainerFragment extends Fragment {
 
-    private FitnessBuddiesContainerAdapter fitnessBuddiesContainerAdapter;
     private FragmentFitnessBuddiesContainerBinding binding;
 
     @Override
@@ -28,7 +27,7 @@ public class FitnessBuddiesContainerFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        fitnessBuddiesContainerAdapter = new FitnessBuddiesContainerAdapter(this);
+        FitnessBuddiesContainerAdapter fitnessBuddiesContainerAdapter = new FitnessBuddiesContainerAdapter(this);
         binding.pager.setAdapter(fitnessBuddiesContainerAdapter);
         new TabLayoutMediator(binding.tabLayout, binding.pager, (tab, position) -> {
             if (position == 1){

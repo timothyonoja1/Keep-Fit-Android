@@ -174,4 +174,12 @@
     <string name="verified_icon">Verified icon</string>
     <string name="waiting_to_accept">Waiting to accept</string>
     <string name="account">Account</string>
+    <string name="body_building">Body Building</string>
+    <string name="suggested_classes">SUGGESTED CLASSES</string>
+    <string name="view">View</string>
+    <string name="categories">Categories</string>
+    <string name="notes">Notes</string>
+    <string name="suggested">SUGGESTED</string>
+    <string name="sessions">Sessions |</string>
+    <string name="weeks">weeks</string>
 </resources>

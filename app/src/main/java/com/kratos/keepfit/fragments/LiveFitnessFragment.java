@@ -1,6 +1,5 @@
 package com.kratos.keepfit.fragments;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.kratos.keepfit.adapters.LiveFitnessAdapter;
-import com.kratos.keepfit.core.LiveFitness;
+import com.kratos.keepfit.entities.LiveFitness;
 import com.kratos.keepfit.databinding.FragmentLiveFitnessBinding;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,6 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class LiveFitnessFragment extends Fragment {
 
     private FragmentLiveFitnessBinding binding;
-    private final List<LiveFitness> liveFitnessList = new ArrayList<>();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -51,6 +49,7 @@ public class LiveFitnessFragment extends Fragment {
         names.add("Southpaw Training");
         names.add("Upcoming Live");
 
+        List<LiveFitness> liveFitnessList = new ArrayList<>();
         int i = 0;
         while (i < 4){
             int imageResource = getResources().getIdentifier(uris.get(i), null, requireActivity().getPackageName());
@@ -58,10 +57,10 @@ public class LiveFitnessFragment extends Fragment {
             ++i;
         }
 
-        updateUI();
+        updateUI(liveFitnessList);
     }
 
-    private void updateUI() {
+    private void updateUI(List<LiveFitness> liveFitnessList) {
         LiveFitnessAdapter liveFitnessAdapter = new LiveFitnessAdapter(liveFitnessList, getContext());
         binding.recyclerView.setAdapter(liveFitnessAdapter);
     }

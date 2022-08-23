@@ -1,6 +1,5 @@
 package com.kratos.keepfit.fragments;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.kratos.keepfit.adapters.NotificationAdapter;
-import com.kratos.keepfit.core.Notification;
+import com.kratos.keepfit.entities.Notification;
 import com.kratos.keepfit.databinding.FragmentNotificationListBinding;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +19,9 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class NotificationListFragment extends Fragment {
 
     private FragmentNotificationListBinding binding;
-    private List<Notification> notifications;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        notifications = new ArrayList<>();
         binding = FragmentNotificationListBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -60,16 +57,18 @@ public class NotificationListFragment extends Fragment {
         dates.add("Monday");
         dates.add("Monday");
 
+        List<Notification> notifications = new ArrayList<>();
+
         int i = 0;
         while (i < 6) {
             int imageResource = getResources().getIdentifier(uris.get(i), null, requireActivity().getPackageName());
             notifications.add(new Notification(i, notificationText.get(i), "", dates.get(i), imageResource));
             ++i;
         }
-        updateUI();
+        updateUI(notifications);
     }
 
-    private void updateUI(){
+    private void updateUI(List<Notification> notifications){
         NotificationAdapter notificationAdapter = new NotificationAdapter(notifications);
         binding.recyclerView.setAdapter(notificationAdapter);
     }

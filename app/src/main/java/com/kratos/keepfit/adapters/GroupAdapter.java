@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.kratos.keepfit.R;
-import com.kratos.keepfit.core.Group;
+import com.kratos.keepfit.entities.Group;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

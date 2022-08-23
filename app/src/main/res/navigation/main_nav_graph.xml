@@ -97,8 +97,29 @@
         android:name="com.kratos.keepfit.fragments.FitnessProgrammesFragment"
         android:label="Fitness Programmes Fragment"
         tools:layout="@layout/fragment_fitness_programmes">
+        <action
+            android:id="@+id/action_fitnessProgrammesFragment_to_trainingListFragment"
+            app:destination="@id/trainingListFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/trainingListFragment"
+        android:name="com.kratos.keepfit.fragments.TrainingListFragment"
+        android:label="Training List Fragment"
+        tools:layout="@layout/fragment_training_list">
+        <action
+            android:id="@+id/action_trainingListFragment_to_trainingSessionListFragment"
+            app:destination="@id/trainingSessionListFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/trainingSessionListFragment"
+        android:name="com.kratos.keepfit.fragments.TrainingSessionListFragment"
+        android:label="Training Session List Fragment"
+        tools:layout="@layout/fragment_training_session_list">
 
     </fragment>
+
 
     <fragment
         android:id="@+id/fitnessBuddiesContainerFragment"

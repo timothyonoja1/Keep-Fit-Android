@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.kratos.keepfit.R;
-import com.kratos.keepfit.core.FitnessBuddy;
+import com.kratos.keepfit.entities.FitnessBuddy;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

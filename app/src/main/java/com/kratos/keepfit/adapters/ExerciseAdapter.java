@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.kratos.keepfit.R;
-import com.kratos.keepfit.core.Exercise;
+import com.kratos.keepfit.entities.Exercise;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import java.util.List;

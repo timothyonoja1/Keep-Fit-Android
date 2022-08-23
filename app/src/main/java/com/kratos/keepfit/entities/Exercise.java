@@ -1,6 +1,4 @@
-package com.kratos.keepfit.core;
-
-import android.graphics.drawable.Drawable;
+package com.kratos.keepfit.entities;
 
 public class Exercise {
 

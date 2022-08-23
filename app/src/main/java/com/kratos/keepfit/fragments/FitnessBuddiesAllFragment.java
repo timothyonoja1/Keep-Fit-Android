@@ -25,5 +25,4 @@ public class FitnessBuddiesAllFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }

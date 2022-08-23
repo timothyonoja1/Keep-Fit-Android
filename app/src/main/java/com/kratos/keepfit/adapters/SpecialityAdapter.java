@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kratos.keepfit.R;
-import com.kratos.keepfit.core.Speciality;
+import com.kratos.keepfit.entities.Speciality;
 
 import java.util.List;
 

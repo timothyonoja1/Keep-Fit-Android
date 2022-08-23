@@ -24,6 +24,9 @@
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.1" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/drawable/ic_baseline_radio_button_checked_24.xml" value="0.1" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1" />
+        <entry key="..\:/Users/HP/KeepFit/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.1" />
+        <entry key="..\:/Users/HP/KeepFit/app/src/main/res/drawable/ic_baseline_star_24_grey.xml" value="0.1" />
+        <entry key="..\:/Users/HP/KeepFit/app/src/main/res/drawable/ic_baseline_star_24_pink.xml" value="0.1" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/drawable/ic_baseline_star_border_24.xml" value="0.1" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/drawable/ic_outline_folder_24.xml" value="0.1165" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/drawable/ic_outline_location_on_24.xml" value="0.168" />
@@ -79,10 +82,13 @@
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/fragment_nutritional_plans.xml" value="0.21739130434782608" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/fragment_profile.xml" value="0.19701086956521738" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/fragment_register.xml" value="0.2921875" />
+        <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/fragment_section_list.xml" value="0.22" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/fragment_set_location.xml" value="0.22" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/fragment_splash.xml" value="0.2" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/fragment_step_1.xml" value="0.25" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/fragment_step_2.xml" value="0.2921875" />
+        <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/fragment_training_list.xml" value="0.25" />
+        <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/fragment_training_session_list.xml" value="0.1" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/fragment_user.xml" value="0.1" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/fragment_verify_your_email.xml" value="0.2921875" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/fragment_walkout.xml" value="0.2164855072463768" />
@@ -98,6 +104,8 @@
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/list_item_pending_acceptance.xml" value="0.12892603850050657" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/list_item_schedule.xml" value="0.33" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/list_item_speciality.xml" value="0.14855072463768115" />
+        <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/list_item_training.xml" value="0.21" />
+        <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/list_item_training_session.xml" value="0.2" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/login.xml" value="0.33" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/main_fragment.xml" value="0.75" />
         <entry key="..\:/Users/HP/KeepFit/app/src/main/res/layout/match.xml" value="0.25" />

@@ -1,6 +1,5 @@
 package com.kratos.keepfit.fragments;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.kratos.keepfit.adapters.GroupAdapter;
-import com.kratos.keepfit.core.Group;
+import com.kratos.keepfit.entities.Group;
 import com.kratos.keepfit.databinding.FragmentGroupListBinding;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,6 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class GroupListFragment extends Fragment {
 
     private FragmentGroupListBinding binding;
-    private final List<Group> groups = new ArrayList<>();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -51,16 +49,18 @@ public class GroupListFragment extends Fragment {
         names.add("Swim Class");
         names.add("Tennis Group");
 
+        List<Group> groups = new ArrayList<>();
+
         int i = 0;
         while (i < 4){
             int imageResource = getResources().getIdentifier(uris.get(i), null, requireActivity().getPackageName());
             groups.add(new Group(i, imageResource, names.get(i), "Awaiting Confirmation", "At 10:00AM"));
             ++i;
         }
-        updateUI();
+        updateUI(groups);
     }
 
-    private void updateUI(){
+    private void updateUI(List<Group> groups){
         GroupAdapter groupAdapter = new GroupAdapter(groups);
         binding.recyclerView.setAdapter(groupAdapter);
     }

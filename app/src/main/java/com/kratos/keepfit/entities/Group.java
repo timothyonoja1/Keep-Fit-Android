@@ -1,4 +1,4 @@
-package com.kratos.keepfit.core;
+package com.kratos.keepfit.entities;
 
 public class Group {
 

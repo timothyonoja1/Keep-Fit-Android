@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.kratos.keepfit.R;
-import com.kratos.keepfit.core.Gallery;
+import com.kratos.keepfit.entities.Gallery;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
