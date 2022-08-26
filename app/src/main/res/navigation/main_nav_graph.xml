@@ -57,7 +57,27 @@
         android:label="Forgot Password Fragment"
         tools:layout="@layout/fragment_forgot_password">
         <action
-            android:id="@+id/action_forgotPasswordFragment_to_homeFragment"
+            android:id="@+id/action_forgotPasswordFragment_to_forgotPasswordVerificationFragment"
+            app:destination="@id/forgotPasswordVerificationFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgotPasswordVerificationFragment"
+        android:name="com.kratos.keepfit.fragments.ForgotPasswordVerificationFragment"
+        android:label="Forgot Password Verification Fragment"
+        tools:layout="@layout/fragment_verify_your_email">
+        <action
+            android:id="@+id/action_forgotPasswordVerificationFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.kratos.keepfit.fragments.ResetPasswordFragment"
+        android:label="Reset Password Fragment"
+        tools:layout="@layout/fragment_reset_password">
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:popUpTo="@+id/main_nav_graph"
             app:popUpToInclusive="true"/>
@@ -158,6 +178,47 @@
         android:name="com.kratos.keepfit.fragments.LiveFitnessFragment"
         android:label="Live Fitness Fragment"
         tools:layout="@layout/fragment_live_fitness">
+        <action
+            android:id="@+id/action_liveFitnessFragment_to_liveFitnessItemFragment"
+            app:destination="@id/liveFitnessItemFragment"/>
+        <action
+            android:id="@+id/action_liveFitnessFragment_to_upcomingListFragment"
+            app:destination="@id/upcomingListFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/liveFitnessItemFragment"
+        android:name="com.kratos.keepfit.fragments.LiveFitnessItemFragment"
+        android:label="Live Fitness Item Fragment"
+        tools:layout="@layout/fragment_live_fitness_item">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/upcomingListFragment"
+        android:name="com.kratos.keepfit.fragments.UpcomingListFragment"
+        android:label="Upcoming List Fragment"
+        tools:layout="@layout/fragment_upcoming_list">
+        <action
+            android:id="@+id/action_upcomingListFragment_to_upcomingDetailFragment"
+            app:destination="@id/upcomingDetailFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/upcomingDetailFragment"
+        android:name="com.kratos.keepfit.fragments.UpcomingDetailFragment"
+        android:label="Upcoming Detail Fragment"
+        tools:layout="@layout/fragment_upcoming_detail">
+        <action
+            android:id="@+id/action_upcomingDetailFragment_to_upcomingDetailFragment"
+            app:destination="@id/successfulBookingFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/successfulBookingFragment"
+        android:name="com.kratos.keepfit.fragments.SuccessfulBookingFragment"
+        android:label="Successful booking Fragment"
+        tools:layout="@layout/fragment_successful_booking">
 
     </fragment>
 

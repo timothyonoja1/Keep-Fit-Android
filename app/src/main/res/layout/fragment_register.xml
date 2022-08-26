@@ -118,6 +118,18 @@
             android:layout_marginTop="20dp"
             android:text="@string/have_an_account_sign_in"
             android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/error_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 
 </ScrollView>

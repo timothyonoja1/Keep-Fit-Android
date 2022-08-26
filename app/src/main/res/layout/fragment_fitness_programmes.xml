@@ -26,6 +26,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:text="@string/running"
+                android:textColor="@color/white"
+                android:gravity="center"
                 android:background="@drawable/running_5"/>
 
             <LinearLayout
@@ -40,6 +43,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    android:text="@string/boxing"
+                    android:textColor="@color/white"
+                    android:gravity="center"
                     android:background="@drawable/boxing_2"
                     android:layout_marginBottom="5dp"/>
 
@@ -47,6 +53,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    android:text="@string/hiking"
+                    android:textColor="@color/white"
+                    android:gravity="center"
                     android:background="@drawable/hiking_0"/>
 
             </LinearLayout>
@@ -71,6 +80,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    android:text="@string/swimming"
+                    android:textColor="@color/white"
+                    android:gravity="center"
                     android:background="@drawable/swimming"
                     android:layout_marginBottom="5dp"/>
 
@@ -78,6 +90,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    android:text="@string/cycling"
+                    android:textColor="@color/white"
+                    android:gravity="center"
                     android:background="@drawable/cycling_1"/>
 
             </LinearLayout>
@@ -87,6 +102,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:text="@string/pilates"
+                android:textColor="@color/white"
+                android:gravity="center"
                 android:background="@drawable/pilates_6"/>
         </LinearLayout>
 
@@ -99,6 +117,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:text="@string/circuit_training"
+                android:textColor="@color/white"
+                android:gravity="center"
                 android:background="@drawable/circuit_training_12"/>
 
             <TextView
@@ -107,6 +128,9 @@
                 android:layout_weight="1"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="0dp"
+                android:text="@string/tennis"
+                android:textColor="@color/white"
+                android:gravity="center"
                 android:background="@drawable/tennis_2"/>
 
         </LinearLayout>

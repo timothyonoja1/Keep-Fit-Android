@@ -5,13 +5,17 @@ public class LiveFitness {
     private final int liveID;
     private final String name;
     private final String numberOfViews;
-    private final int backgroundImageDrawableResource;
+    private final String backgroundUri;
+    private int backgroundImageDrawableResource;
+    private final LiveFitnessDetail liveFitnessDetail;
 
-    public LiveFitness(int liveID, String name, String numberOfViews, int backgroundImageDrawableResource) {
+    public LiveFitness(int liveID, String name, String numberOfViews,
+                       String backgroundUri, LiveFitnessDetail liveFitnessDetail) {
         this.liveID = liveID;
         this.name = name;
         this.numberOfViews = numberOfViews;
-        this.backgroundImageDrawableResource = backgroundImageDrawableResource;
+        this.backgroundUri = backgroundUri;
+        this.liveFitnessDetail = liveFitnessDetail;
     }
 
     public int getLiveID() {
@@ -26,7 +30,19 @@ public class LiveFitness {
         return numberOfViews;
     }
 
-    public int getbackgroundImageDrawableResource() {
+    public String getBackgroundUri() {
+        return backgroundUri;
+    }
+
+    public int getBackgroundImageDrawableResource() {
         return backgroundImageDrawableResource;
+    }
+
+    public void setBackgroundImageDrawableResource(int backgroundImageDrawableResource) {
+        this.backgroundImageDrawableResource = backgroundImageDrawableResource;
+    }
+
+    public LiveFitnessDetail getLiveFitnessDetail() {
+        return liveFitnessDetail;
     }
 }

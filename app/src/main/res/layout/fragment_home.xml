@@ -127,43 +127,43 @@
                         android:id="@+id/search_and_match"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
+                        android:text="@string/search_amp_n_match"
+                        android:gravity="center"
+                        android:textColor="@color/white"
                         android:background="@drawable/search_match"
                         android:height="80dp"
-                        android:paddingStart="60dp"
-                        android:paddingEnd="0dp"
-                        android:paddingTop="25dp"
                         android:layout_margin="5dp"/>
 
                     <TextView
                         android:id="@+id/nutritional_plans"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
+                        android:text="@string/nutritional_n_plans"
+                        android:textColor="@color/white"
+                        android:gravity="center"
                         android:background="@drawable/nutritional_plans"
-                        android:layout_margin="5dp"
-                        android:paddingTop="60dp"
-                        android:paddingStart="50dp"
-                        android:paddingEnd="0dp" />
+                        android:layout_margin="5dp"/>
 
                     <TextView
                         android:id="@+id/fitness_buddies"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
+                        android:text="@string/fitness_n_buddies"
+                        android:textColor="@color/white"
+                        android:gravity="center"
                         android:background="@drawable/fitness_buddies"
                         android:height="80dp"
-                        android:paddingStart="60dp"
-                        android:paddingEnd="0dp"
-                        android:paddingTop="30dp"
-                        android:layout_margin="5dp" />
+                        android:layout_margin="5dp"/>
 
                     <TextView
                         android:id="@+id/physio_active"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
+                        android:text="@string/physio_active"
+                        android:textColor="@color/white"
+                        android:gravity="center"
                         android:background="@drawable/physio_active"
-                        android:layout_margin="5dp"
-                        android:paddingTop="60dp"
-                        android:paddingStart="50dp"
-                        android:paddingEnd="0dp" />
+                        android:layout_margin="5dp"/>
 
                 </LinearLayout>
 
@@ -177,11 +177,11 @@
                         android:id="@+id/fitness_programmes"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
+                        android:text="@string/fitness_n_programmes"
+                        android:gravity="center"
+                        android:textColor="@color/white"
                         android:layout_margin="5dp"
-                        android:background="@drawable/fitness_programmes"
-                        android:paddingStart="50dp"
-                        android:paddingTop="60dp"
-                        android:paddingEnd="0dp" />
+                        android:background="@drawable/fitness_programmes"/>
 
                     <TextView
                         android:id="@+id/live_fitness"
@@ -189,10 +189,10 @@
                         android:layout_height="80dp"
                         android:layout_margin="5dp"
                         android:height="80dp"
-                        android:background="@drawable/live_fitness"
-                        android:paddingStart="60dp"
-                        android:paddingTop="25dp"
-                        android:paddingEnd="0dp" />
+                        android:text="@string/live_n_fitness"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:background="@drawable/live_fitness"/>
 
                     <TextView
                         android:id="@+id/groups"
@@ -200,20 +200,20 @@
                         android:layout_height="80dp"
                         android:layout_margin="5dp"
                         android:height="80dp"
-                        android:background="@drawable/groups"
-                        android:paddingStart="50dp"
-                        android:paddingTop="30dp"
-                        android:paddingEnd="0dp"/>
+                        android:text="@string/groups"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:background="@drawable/groups"/>
 
                     <TextView
                         android:id="@+id/training_spots"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:layout_margin="5dp"
-                        android:background="@drawable/trainin_spots"
-                        android:paddingStart="60dp"
-                        android:paddingTop="60dp"
-                        android:paddingEnd="0dp"/>
+                        android:text="@string/training_n_spots"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:background="@drawable/trainin_spots"/>
 
                 </LinearLayout>
             </LinearLayout>
@@ -222,12 +222,11 @@
                 android:id="@+id/train_with_a_champion"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
+                android:text="@string/train_with_a_champion"
+                android:textColor="@color/white"
+                android:gravity="center"
                 android:background="@drawable/train_with_a_champion"
-                android:layout_margin="5dp"
-                android:paddingStart="100dp"
-                android:paddingEnd="0dp"
-                android:paddingTop="40dp"
-                />
+                android:layout_margin="5dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -244,21 +243,19 @@
                         android:id="@+id/challenges"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
+                        android:text="@string/challenges"
+                        android:gravity="center"
+                        android:textColor="@color/white"
                         android:background="@drawable/challenges"
-                        android:height="80dp"
-                        android:paddingStart="60dp"
-                        android:paddingEnd="0dp"
-                        android:paddingTop="25dp"
-                        android:layout_margin="5dp" />
+                        android:layout_margin="5dp"/>
                     <TextView
-                        android:id="@+id/my_videos"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
+                        android:text="@string/my_videos"
+                        android:textColor="@color/white"
+                        android:gravity="center"
                         android:background="@drawable/my_videos"
-                        android:layout_margin="5dp"
-                        android:paddingTop="60dp"
-                        android:paddingStart="50dp"
-                        android:paddingEnd="0dp"/>
+                        android:layout_margin="5dp"/>
 
                 </LinearLayout>
 
@@ -272,22 +269,21 @@
                         android:id="@+id/my_photos"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
+                        android:text="@string/my_photos"
+                        android:textColor="@color/white"
+                        android:gravity="center"
                         android:background="@drawable/my_photos"
-                        android:height="80dp"
-                        android:paddingStart="60dp"
-                        android:paddingEnd="0dp"
-                        android:paddingTop="25dp"
-                        android:layout_margin="5dp" />
+                        android:layout_margin="5dp"/>
 
                     <TextView
                         android:id="@+id/my_products"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
+                        android:text="@string/products"
+                        android:textColor="@color/white"
+                        android:gravity="center"
                         android:background="@drawable/products"
-                        android:layout_margin="5dp"
-                        android:paddingTop="60dp"
-                        android:paddingStart="50dp"
-                        android:paddingEnd="0dp" />
+                        android:layout_margin="5dp"/>
 
                 </LinearLayout>
             </LinearLayout>

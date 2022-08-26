@@ -6,11 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import com.kratos.keepfit.R;
 import com.kratos.keepfit.adapters.LiveFitnessAdapter;
 import com.kratos.keepfit.entities.LiveFitness;
 import com.kratos.keepfit.databinding.FragmentLiveFitnessBinding;
-import java.util.ArrayList;
+import com.kratos.keepfit.viewmodels.fakes.FakeLiveFitnessViewModel;
+import com.kratos.keepfit.viewmodels.interfaces.LiveFitnessViewModel;
 import java.util.List;
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -19,50 +24,62 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class LiveFitnessFragment extends Fragment {
 
     private FragmentLiveFitnessBinding binding;
+    private LiveFitnessViewModel liveFitnessViewModel;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentLiveFitnessBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
+        binding.upcomingItemLayout.getRoot().setOnClickListener(layoutView -> {
+            NavDirections action = LiveFitnessFragmentDirections
+                    .actionLiveFitnessFragmentToUpcomingListFragment();
+            Navigation.findNavController(binding.getRoot()).navigate(action);
+        });
         return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        liveFitnessViewModel = new ViewModelProvider(requireActivity()).get(FakeLiveFitnessViewModel.class);
+        liveFitnessViewModel.getLiveFitnessListUiState().observe(
+                getViewLifecycleOwner(), result -> {
+                    if (result.isFetchingLiveFitnessList()) {
 
-        String uri1 = "@drawable/quick_core_crush";
-        String uri2 = "@drawable/pregnant_mums";
-        String uri3 = "@drawable/south_paw_training";
-        String uri4 = "@drawable/upcoming_live";
-        List<String> uris = new ArrayList<>();
-        uris.add(uri1);
-        uris.add(uri2);
-        uris.add(uri3);
-        uris.add(uri4);
-
-        List<String> names = new ArrayList<>();
-        names.add("Quick Core Crush");
-        names.add("Pregnant mums");
-        names.add("Southpaw Training");
-        names.add("Upcoming Live");
-
-        List<LiveFitness> liveFitnessList = new ArrayList<>();
-        int i = 0;
-        while (i < 4){
-            int imageResource = getResources().getIdentifier(uris.get(i), null, requireActivity().getPackageName());
-            liveFitnessList.add(new LiveFitness(1, "", "", imageResource));
-            ++i;
-        }
-
-        updateUI(liveFitnessList);
+                    }
+                    else {
+                        updateUI(result.getLiveFitnessList());
+                    }
+                }
+        );
     }
 
     private void updateUI(List<LiveFitness> liveFitnessList) {
-        LiveFitnessAdapter liveFitnessAdapter = new LiveFitnessAdapter(liveFitnessList, getContext());
+        for (LiveFitness liveFitness : liveFitnessList) {
+            int imageResource = getResources().getIdentifier(liveFitness.getBackgroundUri(), null,
+                    requireActivity().getPackageName());
+            liveFitness.setBackgroundImageDrawableResource(imageResource);
+        }
+        binding.upcomingItemLayout.nameTextView.setText(R.string.upcoming_live);
+        binding.upcomingItemLayout.bookingsNumberTextView.setText("1385");
+        int imageResource = getResources().getIdentifier("@drawable/upcoming_live", null,
+                requireActivity().getPackageName());
+        binding.upcomingItemLayout.getRoot().setBackgroundResource(imageResource);
+        LiveFitnessAdapter liveFitnessAdapter
+                = new LiveFitnessAdapter(liveFitnessList, getContext(),
+                this::navigateToLiveFitnessItemFragment);
         binding.recyclerView.setAdapter(liveFitnessAdapter);
+    }
+
+    private void navigateToLiveFitnessItemFragment(LiveFitness liveFitness) {
+        if (liveFitness.getLiveFitnessDetail() == null) {
+            return;
+        }
+        liveFitnessViewModel.setSelectedLiveFitness(liveFitness);
+        NavDirections action = LiveFitnessFragmentDirections
+                .actionLiveFitnessFragmentToLiveFitnessItemFragment();
+        Navigation.findNavController(binding.getRoot()).navigate(action);
     }
 
     @Override
