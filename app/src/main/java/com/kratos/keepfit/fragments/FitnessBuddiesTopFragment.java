@@ -6,12 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.kratos.keepfit.adapters.FitnessBuddyAdapter;
 import com.kratos.keepfit.adapters.PendingAcceptanceAdapter;
-import com.kratos.keepfit.entities.FitnessBuddy;
 import com.kratos.keepfit.databinding.FragmentFitnessBuddiesTopBinding;
-import java.util.ArrayList;
+import com.kratos.keepfit.entities.UnrelatedFitnessBuddy;
+import com.kratos.keepfit.viewmodels.fakes.FakeFitnessBuddyViewModel;
+import com.kratos.keepfit.viewmodels.interfaces.FitnessBuddyViewModel;
 import java.util.List;
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -20,6 +24,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class FitnessBuddiesTopFragment  extends Fragment {
 
     private FragmentFitnessBuddiesTopBinding binding;
+    private FitnessBuddyViewModel fitnessBuddyViewModel;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,51 +39,47 @@ public class FitnessBuddiesTopFragment  extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        fitnessBuddyViewModel = new ViewModelProvider(requireActivity()).get(FakeFitnessBuddyViewModel.class);
+        fitnessBuddyViewModel.getFitnessBuddyUiState().observe(
+                getViewLifecycleOwner(), result -> {
+                    if (result.isFetchingFitnessBuddyUiState()) {
 
-        List<String> uris = new ArrayList<>();
-        uris.add("@drawable/tania_dp");
-        uris.add("@drawable/leon_small_dp");
-        uris.add("@drawable/adeola_dp");
-        uris.add("@drawable/tim_spent_dp");
+                    }
+                    else {
 
-        List<String> names = new ArrayList<>();
-        names.add("Tania Hardy");
-        names.add("Leon Small");
-        names.add("Ade Ola");
-        names.add("Tim Spent");
-
-        List<String> pendingNames = new ArrayList<>();
-        pendingNames.add("Kritina Clark");
-        pendingNames.add("St. Louis Maria");
-        pendingNames.add("St. Gading Kasri");
-        pendingNames.add("St. Tim Onoja");
-
-        List<String> description = new ArrayList<>();
-        description.add("0.31 mi away. Fitness");
-        description.add("1.23 mi away. Aerobic");
-        description.add("0.48 mi away. Boxing");
-        description.add("1.47 mi away. Body Building");
-
-        List<FitnessBuddy> fitnessBuddyList = new ArrayList<>();
-        List<String> pendingAcceptanceNames = new ArrayList<>();
-
-        int i = 0;
-        while (i < 4){
-            int imageResource = getResources().getIdentifier(uris.get(i), null, requireActivity().getPackageName());
-            fitnessBuddyList.add(new FitnessBuddy(names.get(i), "", "", description.get(i), imageResource));
-            pendingAcceptanceNames.add(pendingNames.get(i));
-            ++i;
-        }
-
-        updateUI(fitnessBuddyList, pendingAcceptanceNames);
+                        updateUI(result.getUnrelatedFitnessBuddies(), result.getPendingAcceptances());
+                    }
+                }
+        );
     }
 
-    private void updateUI(List<FitnessBuddy> fitnessBuddyList, List<String> pendingAcceptanceNames) {
-        FitnessBuddyAdapter fitnessBuddyAdapter = new FitnessBuddyAdapter(fitnessBuddyList);
+    private void updateUI(List<UnrelatedFitnessBuddy> unrelatedFitnessBuddyList,
+                          List<UnrelatedFitnessBuddy> pendingAcceptances) {
+        for (UnrelatedFitnessBuddy unrelatedFitnessBuddy : unrelatedFitnessBuddyList) {
+            int imageResource = getResources().getIdentifier(unrelatedFitnessBuddy.getImageUrl(),
+                    null, requireActivity().getPackageName());
+            unrelatedFitnessBuddy.setDrawableResource(imageResource);
+        }
+        FitnessBuddyAdapter fitnessBuddyAdapter = new FitnessBuddyAdapter(
+                unrelatedFitnessBuddyList, this::onClick, this::onClickAddIcon);
         binding.fitnessBuddiesRecyclerView.setAdapter(fitnessBuddyAdapter);
 
-        PendingAcceptanceAdapter pendingAcceptanceAdapter = new PendingAcceptanceAdapter(pendingAcceptanceNames);
+        PendingAcceptanceAdapter pendingAcceptanceAdapter
+                = new PendingAcceptanceAdapter(pendingAcceptances, this::onClick);
         binding.pendingAcceptanceRecyclerView.setAdapter(pendingAcceptanceAdapter);
+    }
+
+    private void onClick(UnrelatedFitnessBuddy unrelatedFitnessBuddy) {
+        fitnessBuddyViewModel.setSelectedFitnessBuddy(unrelatedFitnessBuddy.getFitnessBuddyID(),
+                unrelatedFitnessBuddy.getUserProfileID());
+
+        NavDirections action = FitnessBuddiesContainerFragmentDirections
+                .actionFitnessBuddiesContainerFragmentToFitnessBuddyAccountFragment();
+        Navigation.findNavController(binding.getRoot()).navigate(action);
+    }
+
+    private void onClickAddIcon(UnrelatedFitnessBuddy unrelatedFitnessBuddy) {
+        fitnessBuddyViewModel.addFitnessBuddy(unrelatedFitnessBuddy.getFitnessBuddyID());
     }
 
     @Override

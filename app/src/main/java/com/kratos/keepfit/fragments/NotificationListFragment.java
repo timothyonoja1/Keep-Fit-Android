@@ -65,12 +65,21 @@ public class NotificationListFragment extends Fragment {
             notifications.add(new Notification(i, notificationText.get(i), "", dates.get(i), imageResource));
             ++i;
         }
-        updateUI(notifications);
+        // updateUI(notifications);
+        updateUI(new ArrayList<>());
     }
 
     private void updateUI(List<Notification> notifications){
         NotificationAdapter notificationAdapter = new NotificationAdapter(notifications);
         binding.recyclerView.setAdapter(notificationAdapter);
+        if (notifications.isEmpty()) {
+            binding.recyclerView.setVisibility(View.GONE);
+            binding.noNotificationTextView.setVisibility(View.VISIBLE);
+        }
+        else {
+            binding.recyclerView.setVisibility(View.VISIBLE);
+            binding.noNotificationTextView.setVisibility(View.GONE);
+        }
     }
 
     @Override

@@ -22,9 +22,39 @@ public class EnterDetailsFragment extends Fragment {
         binding = FragmentEnterDetailsBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
+        binding.ageButton.setOnClickListener(buttonView -> {
+            NavDirections action = EnterDetailsFragmentDirections
+                    .actionEnterDetailsFragmentToAgeSelectionFragment();
+            Navigation.findNavController(buttonView).navigate(action);
+        });
+
+        binding.heightButton.setOnClickListener(buttonView -> {
+            NavDirections action = EnterDetailsFragmentDirections
+                    .actionEnterDetailsFragmentToHeightSelectionFragment();
+            Navigation.findNavController(buttonView).navigate(action);
+        });
+
+        binding.weightButton.setOnClickListener(buttonView -> {
+            NavDirections action = EnterDetailsFragmentDirections
+                    .actionEnterDetailsFragmentToWeightSelectionFragment();
+            Navigation.findNavController(buttonView).navigate(action);
+        });
+
+        binding.goalsButton.setOnClickListener(buttonView -> {
+            NavDirections action = EnterDetailsFragmentDirections
+                    .actionEnterDetailsFragmentToFitnessGoalSelectionFragment();
+            Navigation.findNavController(buttonView).navigate(action);
+        });
+
+        binding.levelButton.setOnClickListener(buttonView -> {
+            NavDirections action = EnterDetailsFragmentDirections
+                    .actionEnterDetailsFragmentToSkillLevelSelectionFragment();
+            Navigation.findNavController(buttonView).navigate(action);
+        });
+
         binding.confirmDetailsButton.setOnClickListener(buttonView -> {
             NavDirections action = EnterDetailsFragmentDirections
-                    .actionEnterDetailsFragmentToStep2Fragment();
+                    .actionEnterDetailsFragmentToStepsFragment();
             Navigation.findNavController(buttonView).navigate(action);
         });
         return view;

@@ -19,6 +19,7 @@
             android:layout_marginBottom="10dp"/>
 
         <TextView
+            android:id="@+id/see_all_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/see_all"
@@ -29,11 +30,21 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
         <include android:id="@+id/upcoming_item_layout"
             layout="@layout/list_item_upcoming"/>
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/no_live_fitness_videos_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="200dp"
+            android:text="@string/no_live_fitness_videos"
+            android:visibility="gone"/>
 
+    </LinearLayout>
 </ScrollView>

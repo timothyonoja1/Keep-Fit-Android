@@ -8,22 +8,38 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/fitness_buddies_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/waiting_to_accept"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/pending_acceptance_recyclerView"
+            android:id="@+id/no_fitness_buddy_text_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/no_fitness_buddy"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fitness_buddies_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/waiting_to_accept"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/pending_acceptance_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

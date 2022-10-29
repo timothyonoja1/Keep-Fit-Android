@@ -19,7 +19,8 @@ public class ChallengesFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentChallengesBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
-
+        binding.challengesLayout.setVisibility(View.GONE);
+        binding.noChallengesTextView.setVisibility(View.VISIBLE);
         return view;
     }
 

@@ -33,7 +33,7 @@ public class MainFragment extends Fragment {
         });
         binding.searchAndMatch.setOnClickListener(textView -> {
             NavDirections action = MainFragmentDirections
-                    .actionMainFragmentToStep1Fragment();
+                    .actionMainFragmentToStepsFragment();
             Navigation.findNavController(textView).navigate(action);
         });
 

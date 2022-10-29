@@ -57,10 +57,19 @@ public class GroupListFragment extends Fragment {
             groups.add(new Group(i, imageResource, names.get(i), "Awaiting Confirmation", "At 10:00AM"));
             ++i;
         }
-        updateUI(groups);
+        //updateUI(groups);
+        updateUI(new ArrayList<>());
     }
 
     private void updateUI(List<Group> groups){
+        if (groups.isEmpty()) {
+            binding.recyclerView.setVisibility(View.GONE);
+            binding.noGroupsTextView.setVisibility(View.VISIBLE);
+        }
+        else {
+            binding.recyclerView.setVisibility(View.VISIBLE);
+            binding.noGroupsTextView.setVisibility(View.GONE);
+        }
         GroupAdapter groupAdapter = new GroupAdapter(groups);
         binding.recyclerView.setAdapter(groupAdapter);
     }

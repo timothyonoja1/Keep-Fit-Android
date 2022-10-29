@@ -2,7 +2,6 @@ package com.kratos.keepfit.viewmodels.interfaces;
 
 import androidx.lifecycle.MutableLiveData;
 import com.kratos.keepfit.states.AuthenticationUiState;
-import com.kratos.keepfit.states.EmailVerificationCodeUiState;
 import com.kratos.keepfit.states.GenerateVerificationCodeUiState;
 
 /** State holder interface for the authentication UI screens. */

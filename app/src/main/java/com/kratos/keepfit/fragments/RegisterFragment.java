@@ -11,10 +11,8 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import com.kratos.keepfit.databinding.FragmentRegisterBinding;
 import com.kratos.keepfit.states.AuthenticationUiStatus;
-import com.kratos.keepfit.viewmodels.fakes.FakeAuthenticationViewModel;
 import com.kratos.keepfit.viewmodels.interfaces.AuthenticationViewModel;
 import com.kratos.keepfit.viewmodels.real.AuthenticationViewModelImpl;
-
 import dagger.hilt.android.AndroidEntryPoint;
 
 /** Fragment for user log in. */
@@ -67,7 +65,6 @@ public class RegisterFragment extends Fragment {
             case Failure:
                 hideLoadingUi();
                 binding.errorTextView.setText(errorMessage);
-                binding.confirmButton.setEnabled(true);
                 break;
             default:
                 hideLoadingUi();

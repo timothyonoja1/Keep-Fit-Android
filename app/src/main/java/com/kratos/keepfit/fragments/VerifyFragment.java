@@ -45,6 +45,7 @@ public class VerifyFragment extends Fragment {
         authenticationViewModel.getRegistrationUiState().observe(getViewLifecycleOwner(),
                 result -> updateUI(result.getAuthenticationUiStatus(), result.getErrorMessage())
         );
+        authenticationViewModel.register("123456");
     }
 
     private void updateUI(AuthenticationUiStatus authenticationUiStatus, String errorMessage) {

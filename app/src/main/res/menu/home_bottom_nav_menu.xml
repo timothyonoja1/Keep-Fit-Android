@@ -7,9 +7,9 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/exerciseListFragment"
+        android:id="@+id/feedListFragment"
         android:icon="@drawable/search_match"
-        android:title="@string/exercises" />
+        android:title="@string/feeds" />
 
     <item
         android:id="@+id/add_menu_item"

@@ -7,35 +7,38 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.kratos.keepfit.R;
+import com.kratos.keepfit.core.OnItemClickListener;
+import com.kratos.keepfit.entities.UnrelatedFitnessBuddy;
+
 import java.util.List;
 
 public class PendingAcceptanceAdapter extends RecyclerView.Adapter<PendingAcceptanceAdapter.PendingAcceptanceHolder> {
 
-    private final List<String> pendingAcceptances;
+    private final List<UnrelatedFitnessBuddy> pendingAcceptances;
+    private final OnItemClickListener<UnrelatedFitnessBuddy> onItemClickListener;
 
-    public PendingAcceptanceAdapter(List<String> pendingAcceptances){
+    public PendingAcceptanceAdapter(List<UnrelatedFitnessBuddy> pendingAcceptances,
+                                    OnItemClickListener<UnrelatedFitnessBuddy> onItemClickListener){
         this.pendingAcceptances = pendingAcceptances;
+        this.onItemClickListener = onItemClickListener;
     }
 
-    protected static class PendingAcceptanceHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    protected class PendingAcceptanceHolder extends RecyclerView.ViewHolder {
 
         private final TextView nameTextView;
-        private String pendingAcceptanceName;
+        private UnrelatedFitnessBuddy pendingAcceptance;
 
         public PendingAcceptanceHolder(View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
+            itemView.setOnClickListener(clickedView -> {
+                onItemClickListener.onItemClick(pendingAcceptance);
+            });
             nameTextView = itemView.findViewById(R.id.name_text_view);
         }
 
-        public void bind(String pendingAcceptanceName){
-            this.pendingAcceptanceName = pendingAcceptanceName;
-            nameTextView.setText(pendingAcceptanceName);
-        }
-
-        @Override
-        public void onClick(View view) {
-
+        public void bind(UnrelatedFitnessBuddy pendingAcceptance){
+            this.pendingAcceptance = pendingAcceptance;
+            nameTextView.setText(pendingAcceptance.getName());
         }
     }
 

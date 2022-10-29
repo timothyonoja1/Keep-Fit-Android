@@ -17,9 +17,9 @@
 
     <fragment
         android:id="@+id/authenticationFragment"
-        android:name="com.kratos.keepfit.fragments.AuthFragment"
+        android:name="com.kratos.keepfit.fragments.AuthenticationFragment"
         android:label="Authentication Fragment"
-        tools:layout="@layout/fragment_auth">
+        tools:layout="@layout/fragment_authentication">
         <action
             android:id="@+id/action_authenticationFragment_to_loginFragment"
             app:destination="@id/loginFragment"/>
@@ -36,6 +36,11 @@
         <action
             android:id="@+id/action_detailsFragment_to_mainFragment"
             app:destination="@id/mainFragment"/>
+
+        <action
+            android:id="@+id/action_detailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment"/>
+
         <action
             android:id="@+id/action_detailsFragment_to_profileFragment"
             app:destination="@id/profileFragment"/>
@@ -89,8 +94,11 @@
         android:label="Home Fragment"
         tools:layout="@layout/fragment_home">
         <action
+            android:id="@+id/action_homeFragment_to_stepsFragment"
+            app:destination="@id/stepsFragment"/>
+        <action
             android:id="@+id/action_homeFragment_to_fitnessProgrammesFragment"
-            app:destination="@id/fitnessProgrammesFragment"/>
+            app:destination="@id/fitnessCategoriesFragment"/>
         <action
             android:id="@+id/action_homeFragment_to_fitnessBuddiesContainerFragment"
             app:destination="@id/fitnessBuddiesContainerFragment"/>
@@ -113,30 +121,40 @@
     </fragment>
 
     <fragment
-        android:id="@+id/fitnessProgrammesFragment"
-        android:name="com.kratos.keepfit.fragments.FitnessProgrammesFragment"
-        android:label="Fitness Programmes Fragment"
-        tools:layout="@layout/fragment_fitness_programmes">
+        android:id="@+id/fitnessCategoriesFragment"
+        android:name="com.kratos.keepfit.fragments.FitnessCategoriesFragment"
+        android:label="Fitness Categories Fragment"
+        tools:layout="@layout/fragment_fitness_categories">
         <action
-            android:id="@+id/action_fitnessProgrammesFragment_to_trainingListFragment"
-            app:destination="@id/trainingListFragment"/>
+            android:id="@+id/action_fitnessCategoriesFragment_to_fitnessProgrammeListFragment"
+            app:destination="@id/fitnessProgrammeListFragment"/>
     </fragment>
 
     <fragment
-        android:id="@+id/trainingListFragment"
-        android:name="com.kratos.keepfit.fragments.TrainingListFragment"
-        android:label="Training List Fragment"
-        tools:layout="@layout/fragment_training_list">
+        android:id="@+id/fitnessProgrammeListFragment"
+        android:name="com.kratos.keepfit.fragments.FitnessProgrammeListFragment"
+        android:label="Fitness Programmes List Fragment"
+        tools:layout="@layout/fragment_fitness_programme_list">
         <action
-            android:id="@+id/action_trainingListFragment_to_trainingSessionListFragment"
-            app:destination="@id/trainingSessionListFragment"/>
+            android:id="@+id/action_fitnessProgrammeListFragment_to_fitnessVideoListFragment"
+            app:destination="@id/fitnessVideoListFragment"/>
     </fragment>
 
     <fragment
-        android:id="@+id/trainingSessionListFragment"
-        android:name="com.kratos.keepfit.fragments.TrainingSessionListFragment"
-        android:label="Training Session List Fragment"
-        tools:layout="@layout/fragment_training_session_list">
+        android:id="@+id/fitnessVideoListFragment"
+        android:name="com.kratos.keepfit.fragments.FitnessVideoListFragment"
+        android:label="Fitness Video List Fragment"
+        tools:layout="@layout/fragment_fitness_video_list">
+        <action
+            android:id="@+id/action_fitnessVideoListFragment_to_fitnessVideoWatchFragment"
+            app:destination="@id/fitnessVideoWatchFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fitnessVideoWatchFragment"
+        android:name="com.kratos.keepfit.fragments.FitnessVideoWatchFragment"
+        android:label="Fitness Video Watch Fragment"
+        tools:layout="@layout/fragment_fitness_video_watch">
 
     </fragment>
 
@@ -146,6 +164,9 @@
         android:name="com.kratos.keepfit.fragments.FitnessBuddiesContainerFragment"
         android:label="Fitness Buddies Container Fragment"
         tools:layout="@layout/fragment_fitness_buddies_container">
+        <action
+            android:id="@+id/action_fitnessBuddiesContainerFragment_to_fitnessBuddyAccountFragment"
+            app:destination="@id/fitnessBuddyAccountFragment"/>
 
     </fragment>
 
@@ -162,6 +183,14 @@
         android:name="com.kratos.keepfit.fragments.FitnessBuddiesTopFragment"
         android:label="Fitness Buddies Top Fragment"
         tools:layout="@layout/fragment_fitness_buddies_top">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fitnessBuddyAccountFragment"
+        android:name="com.kratos.keepfit.fragments.FitnessBuddyAccountFragment"
+        android:label="Fitness Buddy Account Fragment"
+        tools:layout="@layout/fragment_fitness_buddy_account">
 
     </fragment>
 
@@ -265,12 +294,12 @@
     </fragment>
 
     <fragment
-        android:id="@+id/exerciseListFragment"
-        android:name="com.kratos.keepfit.fragments.ExerciseListFragment"
+        android:id="@+id/feedListFragment"
+        android:name="com.kratos.keepfit.fragments.FeedListFragment"
         android:label="User Fragment"
-        tools:layout="@layout/fragment_exercise_list">
+        tools:layout="@layout/fragment_feed_list">
         <action
-            android:id="@+id/action_exerciseListFragment_to_accountFragment"
+            android:id="@+id/action_feedListFragment_to_accountFragment"
             app:destination="@id/accountFragment"/>
     </fragment>
 
@@ -281,7 +310,7 @@
         tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/action_userFragment_to_step1Fragment"
-            app:destination="@id/step1Fragment"/>
+            app:destination="@id/stepsFragment"/>
     </fragment>
 
     <fragment
@@ -308,31 +337,21 @@
             android:id="@+id/action_mainFragment_to_registerFragment"
             app:destination="@id/registerFragment"/>
         <action
-            android:id="@+id/action_mainFragment_to_step1Fragment"
-            app:destination="@id/step1Fragment"/>
+            android:id="@+id/action_mainFragment_to_stepsFragment"
+            app:destination="@id/stepsFragment"/>
     </fragment>
 
     <fragment
-        android:id="@+id/step1Fragment"
-        android:name="com.kratos.keepfit.fragments.Step1Fragment"
+        android:id="@+id/stepsFragment"
+        android:name="com.kratos.keepfit.fragments.StepsFragment"
         android:label="Main Fragment"
-        tools:layout="@layout/fragment_main">
+        tools:layout="@layout/fragment_steps">
         <action
-            android:id="@+id/action_step1Fragment_to_enterDetailsFragment"
+            android:id="@+id/action_stepsFragment_to_enterDetailsFragment"
             app:destination="@id/enterDetailsFragment"/>
-    </fragment>
-
-    <fragment
-        android:id="@+id/step2Fragment"
-        android:name="com.kratos.keepfit.fragments.Step2Fragment"
-        android:label="Main Fragment"
-        tools:layout="@layout/fragment_main">
         <action
-            android:id="@+id/action_step2Fragment_to_detailsFragment"
+            android:id="@+id/action_stepsFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"/>
-        <action
-            android:id="@+id/action_step2Fragment_to_enterDetailsFragment"
-            app:destination="@id/enterDetailsFragment"/>
     </fragment>
 
     <fragment
@@ -341,8 +360,79 @@
         android:label="Enter Details Fragment"
         tools:layout="@layout/fragment_enter_details" >
         <action
-            android:id="@+id/action_enterDetailsFragment_to_step2Fragment"
-            app:destination="@id/step2Fragment"/>
+            android:id="@+id/action_enterDetailsFragment_to_stepsFragment"
+            app:destination="@id/stepsFragment"/>
+
+        <action
+            android:id="@+id/action_enterDetailsFragment_to_ageSelectionFragment"
+            app:destination="@id/ageSelectionFragment"/>
+
+        <action
+            android:id="@+id/action_enterDetailsFragment_to_heightSelectionFragment"
+            app:destination="@id/heightSelectionFragment"/>
+
+        <action
+            android:id="@+id/action_enterDetailsFragment_to_weightSelectionFragment"
+            app:destination="@id/weightSelectionFragment"/>
+
+        <action
+            android:id="@+id/action_enterDetailsFragment_to_fitnessGoalSelectionFragment"
+            app:destination="@id/fitnessGoalSelectionFragment"/>
+
+        <action
+            android:id="@+id/action_enterDetailsFragment_to_skillLevelSelectionFragment"
+            app:destination="@id/skillLevelSelectionFragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ageSelectionFragment"
+        android:name="com.kratos.keepfit.fragments.AgeSelectionFragment"
+        android:label="Main Fragment"
+        tools:layout="@layout/fragment_age_selection">
+        <action
+            android:id="@+id/action_ageSelectionFragment_to_enterDetailsFragment"
+            app:destination="@id/enterDetailsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/heightSelectionFragment"
+        android:name="com.kratos.keepfit.fragments.HeightSelectionFragment"
+        android:label="Main Fragment"
+        tools:layout="@layout/fragment_height_selection">
+        <action
+            android:id="@+id/action_heightSelectionFragment_to_enterDetailsFragment"
+            app:destination="@id/enterDetailsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/weightSelectionFragment"
+        android:name="com.kratos.keepfit.fragments.WeightSelectionFragment"
+        android:label="Main Fragment"
+        tools:layout="@layout/fragment_weight_selection">
+        <action
+            android:id="@+id/action_weightSelectionFragment_to_enterDetailsFragment"
+            app:destination="@id/enterDetailsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fitnessGoalSelectionFragment"
+        android:name="com.kratos.keepfit.fragments.FitnessGoalSelectionFragment"
+        android:label="Main Fragment"
+        tools:layout="@layout/fragment_fitness_goal_selection">
+        <action
+            android:id="@+id/action_fitnessGoalSelectionFragment_to_enterDetailsFragment"
+            app:destination="@id/enterDetailsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/skillLevelSelectionFragment"
+        android:name="com.kratos.keepfit.fragments.SkillLevelSelectionFragment"
+        android:label="Main Fragment"
+        tools:layout="@layout/fragment_fitness_goal_selection">
+        <action
+            android:id="@+id/action_SkillLevelSelectionFragment_to_enterDetailsFragment"
+            app:destination="@id/enterDetailsFragment"/>
     </fragment>
 
     <fragment

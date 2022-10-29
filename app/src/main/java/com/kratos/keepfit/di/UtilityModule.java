@@ -1,5 +1,7 @@
 package com.kratos.keepfit.di;
 
+import com.kratos.keepfit.utilities.fakes.FakeDateTimeUtility;
+import com.kratos.keepfit.utilities.interfaces.DateTimeUtility;
 import com.kratos.keepfit.utilities.interfaces.ValidationUtility;
 import com.kratos.keepfit.utilities.real.ValidationUtilityImpl;
 import javax.inject.Singleton;
@@ -20,4 +22,9 @@ public abstract class UtilityModule {
             ValidationUtilityImpl validationUtilityImpl
     );
 
+    @Binds
+    @Singleton
+    public abstract DateTimeUtility bindDateTimeUtility(
+            FakeDateTimeUtility dateTimeUtilityImpl
+    );
 }

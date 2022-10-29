@@ -12,23 +12,23 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/profile_picture_text_view"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:background="@drawable/user_profile_picture"/>
+            android:layout_gravity="center"/>
 
         <TextView
+            android:id="@+id/name_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/david_adebola"
             android:layout_gravity="center"
             android:textSize="20sp"
             android:layout_marginTop="20dp"/>
 
         <TextView
+            android:id="@+id/skill_level_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/beginner"
             android:layout_gravity="center"
             android:textSize="16sp"/>
 
@@ -38,18 +38,18 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/complete_profile_button"
+                android:id="@+id/edit_profile_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/complete_profile"/>
+                android:text="@string/edit_profile"/>
 
             <TextView
+                android:id="@+id/number_of_sessions_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:textSize="18sp"
-                android:text="@string/t_t_218_n_sessions"/>
+                android:textSize="18sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -96,6 +96,7 @@
                 android:gravity="center"/>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -231,6 +232,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/logout_link_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

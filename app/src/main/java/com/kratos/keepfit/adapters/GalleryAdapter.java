@@ -32,7 +32,9 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.GalleryH
 
         public void bind(Gallery gallery){
             this.gallery = gallery;
-            Picasso.get().load(gallery.getDrawableResource()).into(galleryImageView);
+            Picasso.get().load(gallery.getImageUri())
+                    .fit().placeholder(R.drawable.grey_background).error(R.drawable.grey_background)
+                    .into(galleryImageView);
         }
 
         @Override

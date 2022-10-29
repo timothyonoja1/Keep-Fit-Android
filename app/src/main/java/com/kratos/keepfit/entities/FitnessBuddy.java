@@ -1,38 +1,31 @@
 package com.kratos.keepfit.entities;
 
+import java.util.Date;
+
 public class FitnessBuddy {
 
-    private final String name;
-    private final String location;
-    private final String category;
-    private final String description;
-    private final int drawableResource;
+    private final int fitnessBuddyID;
+    private final int userProfileID;
+    private Date dateSavedToLocalDatabase;
 
-    public FitnessBuddy(String name, String location, String category, String description, int drawableResource) {
-        this.name = name;
-        this.location = location;
-        this.category = category;
-        this.description = description;
-        this.drawableResource = drawableResource;
+    public FitnessBuddy(int fitnessBuddyID, int userProfileID) {
+        this.fitnessBuddyID = fitnessBuddyID;
+        this.userProfileID = userProfileID;
     }
 
-    public String getName() {
-        return name;
+    public int getFitnessBuddyID() {
+        return fitnessBuddyID;
     }
 
-    public String getLocation() {
-        return location;
+    public int getUserProfileID() {
+        return userProfileID;
     }
 
-    public String getCategory() {
-        return category;
+    public Date getDateSavedToLocalDatabase() {
+        return dateSavedToLocalDatabase;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public int getDrawableResource() {
-        return drawableResource;
+    public void setDateSavedToLocalDatabase(Date dateSavedToLocalDatabase) {
+        this.dateSavedToLocalDatabase = dateSavedToLocalDatabase;
     }
 }

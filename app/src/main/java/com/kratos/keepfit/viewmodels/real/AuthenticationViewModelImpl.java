@@ -2,7 +2,6 @@ package com.kratos.keepfit.viewmodels.real;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
 import com.kratos.keepfit.entities.EmailCodeType;
 import com.kratos.keepfit.repositories.interfaces.UserRepository;
 import com.kratos.keepfit.states.AuthenticationUiState;

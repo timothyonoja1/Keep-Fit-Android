@@ -16,6 +16,8 @@ import com.kratos.keepfit.entities.LiveFitness;
 import com.kratos.keepfit.databinding.FragmentLiveFitnessBinding;
 import com.kratos.keepfit.viewmodels.fakes.FakeLiveFitnessViewModel;
 import com.kratos.keepfit.viewmodels.interfaces.LiveFitnessViewModel;
+
+import java.util.ArrayList;
 import java.util.List;
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -49,13 +51,27 @@ public class LiveFitnessFragment extends Fragment {
 
                     }
                     else {
-                        updateUI(result.getLiveFitnessList());
+                        //updateUI(result.getLiveFitnessList());
+                        updateUI(new ArrayList<>());
                     }
                 }
         );
     }
 
     private void updateUI(List<LiveFitness> liveFitnessList) {
+        if (liveFitnessList.isEmpty()) {
+            binding.recyclerView.setVisibility(View.GONE);
+            binding.seeAllTextView.setVisibility(View.GONE);
+            binding.upcomingItemLayout.getRoot().setVisibility(View.GONE);
+            binding.noLiveFitnessVideosTextView.setVisibility(View.VISIBLE);
+        }
+        else {
+            binding.recyclerView.setVisibility(View.VISIBLE);
+            binding.seeAllTextView.setVisibility(View.VISIBLE);
+            binding.upcomingItemLayout.getRoot().setVisibility(View.VISIBLE);
+            binding.noLiveFitnessVideosTextView.setVisibility(View.GONE);
+
+        }
         for (LiveFitness liveFitness : liveFitnessList) {
             int imageResource = getResources().getIdentifier(liveFitness.getBackgroundUri(), null,
                     requireActivity().getPackageName());
@@ -70,6 +86,7 @@ public class LiveFitnessFragment extends Fragment {
                 = new LiveFitnessAdapter(liveFitnessList, getContext(),
                 this::navigateToLiveFitnessItemFragment);
         binding.recyclerView.setAdapter(liveFitnessAdapter);
+
     }
 
     private void navigateToLiveFitnessItemFragment(LiveFitness liveFitness) {

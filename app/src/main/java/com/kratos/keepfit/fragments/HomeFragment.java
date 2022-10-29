@@ -6,10 +6,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import com.kratos.keepfit.R;
 import com.kratos.keepfit.databinding.FragmentHomeBinding;
+import com.kratos.keepfit.states.HomeUiState;
+import com.kratos.keepfit.viewmodels.interfaces.HomeViewModel;
+import com.kratos.keepfit.viewmodels.real.HomeViewModelImpl;
+import com.squareup.picasso.Picasso;
 import dagger.hilt.android.AndroidEntryPoint;
 
 /** Fragment for user log in. */
@@ -17,6 +22,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    private HomeViewModel homeViewModel;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -30,7 +36,12 @@ public class HomeFragment extends Fragment {
             binding.keepFitMatchesButton.setBackgroundColor(getResources().getColor(R.color.dark_primary));
             binding.allButton.setBackgroundColor(getResources().getColor(R.color.light_grey));
         });
-        binding.fitnessProgrammes.setOnClickListener(imageView -> {
+        binding.searchAndMatch.setOnClickListener(textView -> {
+            NavDirections action = HomeFragmentDirections
+                    .actionHomeFragmentToStepsFragment();
+            Navigation.findNavController(textView).navigate(action);
+        });
+        binding.fitnessProgrammesTextView.setOnClickListener(imageView -> {
             NavDirections action = HomeFragmentDirections
                     .actionHomeFragmentToFitnessProgrammesFragment();
             Navigation.findNavController(imageView).navigate(action);
@@ -66,6 +77,36 @@ public class HomeFragment extends Fragment {
             Navigation.findNavController(imageView).navigate(action);
         });
         return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        homeViewModel = new ViewModelProvider(requireActivity()).get(HomeViewModelImpl.class);
+        homeViewModel.getHomeUiState().observe(
+                getViewLifecycleOwner(), result -> {
+                    if (result.isFetchingUiState()) {
+
+                    }
+                    else {
+                        updateUI(result);
+                    }
+                }
+        );
+    }
+
+    private void updateUI(HomeUiState homeUiState) {
+        binding.greetingTextView.setText(homeUiState.getAppropriateGreeting());
+        binding.firstNameTextView.setText(homeUiState.getUserProfile().getFirstname());
+        binding.numberOfSessionsTextView.setText(
+                String.format("\t %s \n Sessions", homeUiState.getUserProfileDetail().getNumberOfSessions())
+        );
+
+        Picasso.get().load(homeUiState.getUserProfileDetail().getImageUri())
+                .placeholder(R.drawable.grey_background).error(R.drawable.grey_background)
+                .into(binding.profilePic);
+
+        binding.fitnessProgrammesTextView.setText(homeUiState.getNumberOfFitnessProgrammes());
     }
 
     @Override

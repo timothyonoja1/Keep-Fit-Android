@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                     || destination.getId() == R.id.enterDetailsFragment
                     || destination.getId() == R.id.verifyFragment
                     || destination.getId() == R.id.mainFragment
-                    || destination.getId() == R.id.step1Fragment){
+                    || destination.getId() == R.id.stepsFragment){
                 bottomNavigationView.setVisibility(View.GONE);
             }
             else{

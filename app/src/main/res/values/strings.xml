@@ -5,7 +5,7 @@
     <string name="name">Name</string>
     <string name="first_name">First Name</string>
     <string name="password">Password</string>
-    <string name="welcome_user">Welcome user</string>
+    <string name="welcome_user">Welcome userProfile</string>
     <string name="sign_up_to_join">Sign up to join</string>
     <string name="email_hint">e.g. david@gmail.com</string>
     <string name="i_agree_to_the_terms_of_service">I agree to the Terms of Service</string>
@@ -48,7 +48,7 @@
     <string name="physio_active_n_t_t_t_46">Physio Active \n \t \t \t (46)</string>
     <string name="t_t_fitness_n_programmes">\t \t Fitness \n Programmes</string>
     <string name="liveFitness">Live</string>
-    <string name="training">Training</string>
+    <string name="fitnessProgramme">Training</string>
     <string name="train_with_a_champion">Train with a champion</string>
     <string name="access_now">Access now</string>
     <string name="challenges">Challenges</string>
@@ -57,7 +57,7 @@
     <string name="products">Products</string>
     <string name="good_morning">Good Morning</string>
     <string name="david">David</string>
-    <string name="t_t_218_n_sessions">\t \t 218 \n Sessions</string>
+    <string name="t_t_218_n_sessions">\t \t 0 \n Sessions</string>
     <string name="splash_screen_image">Splash screen image</string>
     <string name="get_started">Get started</string>
     <string name="already_a_member_login">Already a member? Login</string>
@@ -116,7 +116,7 @@
     <string name="title_notifications">Notifications</string>
     <string name="profile">Profile</string>
     <string name="add">Add</string>
-    <string name="user">User</string>
+    <string name="userProfile">User</string>
     <string name="fitness_9_year_journey">Fitness . 9 Year Journey</string>
     <string name="available">Available</string>
     <string name="edit">Edit</string>
@@ -131,7 +131,7 @@
     <string name="schedule">Schedule</string>
     <string name="bullet_list_item">bullet list item</string>
     <string name="description">Description</string>
-    <string name="description_long">Hey! My name is David. I\'m an avid gym user and have been for 9 years. Strength Training and core workouts are my favorite|</string>
+    <string name="description_long">Hey! My name is David. I\'m an avid gym userProfile and have been for 9 years. Strength Training and core workouts are my favorite|</string>
     <string name="your_recent_activity">Your Recent Activity</string>
     <string name="you_just_completed_a_1_hour_run">You just completed a 1 hour run</string>
     <string name="badges">Badges</string>
@@ -145,7 +145,7 @@
     <string name="choose_fitness_n_programmes">Choose Fitness \n Programmes</string>
     <string name="choose_n_nutrition_plans">Choose \n Nutrition Plans</string>
     <string name="hello_nice_to_meet_n_you_david">Hello, nice to meet \n you David!</string>
-    <string name="set_your_location">Set your location to find training spots around you</string>
+    <string name="set_your_location">Set your location to find fitnessProgramme spots around you</string>
     <string name="use_current_location">Use current location</string>
     <string name="we_only_use">We only access your location while you are using the Keep Fit app</string>
     <string name="or_set_your_location_manually">or set your location manually</string>
@@ -160,7 +160,7 @@
     <string name="delete_icon">Delete icon</string>
     <string name="group_image">Group image</string>
     <string name="walkout">Walkout</string>
-    <string name="exercises">Exercises</string>
+    <string name="feeds">Feeds</string>
     <string name="favorite_icon">Favorite icon</string>
     <string name="check_icon">Check icon</string>
     <string name="headline_icon">Headline icon</string>
@@ -222,4 +222,109 @@
     <string name="new_password">New Password</string>
     <string name="confirm_new_password">Confirm new password</string>
     <string name="submit">Submit</string>
+    <string name="specify_your_age">Specify your age</string>
+    <string name="select_your_age">Select your Age</string>
+    <string name="ft">Ft</string>
+    <string name="inch">Inch</string>
+    <string name="select_your_weight">Select your Weight</string>
+    <string name="select_your_goal">Select your Goal</string>
+    <string name="select_your_level">Select your Level</string>
+    <string name="select_your_height">Select your Height</string>
+    <string name="kg">Kg</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="toast_message">Video completed</string>
+    <string name="please_add_your_specialities_by_clicking_the_edit_button_above">Please add your specialities by clicking the edit button above</string>
+    <string name="please_add_your_images_or_videos">Please add your images or videos by clicking the edit button above</string>
+    <string name="describe_yourself">Describe yourself in one paragraph. This will be visible to other users</string>
+    <string name="please_add_your_schedules">Please add your schedules by clicking the edit button above</string>
+    <string name="you_have_no_new_notification">You have no new notification</string>
+    <string name="there_are_no_new_feeds_at_the_moment">There are no new Feeds at the moment</string>
+    <string name="comments">Comments</string>
+    <string name="verified_by_run_group">Verified by Run Group</string>
+    <string name="recent_activity">Recent activity</string>
+    <string name="no_live_fitness_videos">There are no live fitness videos at the moment. Please check back later</string>
+    <string name="no_groups">There are no groups near your location. Please check back later</string>
+    <string name="no_challenges">There are no new challenges at the moment. Please check back later</string>
+    <string name="no_fitness_buddy">There are no fitness buddy near your location at the moment. Please check back later</string>
+
+    <string-array name="ages_array">
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>20</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
+        <item>49</item>
+        <item>50</item>
+    </string-array>
+    
+    <string-array name="feet_array">
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="inch_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="weight_array">
+        <item>41</item> <item>42</item> <item>43</item> <item>44</item> <item>45</item>
+        <item>46</item> <item>47</item> <item>48</item> <item>49</item> <item>50</item>
+        <item>51</item> <item>52</item> <item>53</item> <item>54</item> <item>55</item>
+        <item>56</item> <item>57</item> <item>58</item> <item>59</item> <item>60</item>
+        <item>61</item> <item>62</item> <item>63</item> <item>64</item> <item>65</item>
+        <item>66</item> <item>67</item> <item>68</item> <item>69</item> <item>70</item>
+        <item>71</item> <item>72</item> <item>73</item> <item>74</item> <item>75</item>
+        <item>76</item> <item>77</item> <item>78</item> <item>79</item> <item>80</item>
+        <item>81</item> <item>82</item> <item>83</item> <item>84</item> <item>85</item>
+        <item>86</item> <item>87</item> <item>88</item> <item>89</item> <item>90</item>
+        <item>91</item> <item>92</item> <item>93</item> <item>94</item> <item>95</item>
+        <item>96</item> <item>97</item> <item>98</item> <item>99</item> <item>100</item>
+        <item>101</item> <item>102</item> <item>103</item> <item>104</item> <item>105</item>
+        <item>106</item> <item>107</item> <item>108</item> <item>109</item> <item>110</item>
+    </string-array>
+
 </resources>

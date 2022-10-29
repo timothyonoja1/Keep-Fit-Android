@@ -2,7 +2,9 @@ package com.kratos.keepfit.remotedatasources.fakes;
 
 import com.kratos.keepfit.core.Result;
 import com.kratos.keepfit.entities.EmailCodeType;
-import com.kratos.keepfit.entities.User;
+import com.kratos.keepfit.entities.Gender;
+import com.kratos.keepfit.entities.UserProfile;
+import com.kratos.keepfit.entities.UserProfileDetail;
 import com.kratos.keepfit.entities.UserRole;
 import com.kratos.keepfit.remotedatasources.interfaces.UserRemoteDataSource;
 import java.util.ArrayList;
@@ -13,50 +15,76 @@ import javax.inject.Inject;
 /** Fake user remote data source implementation. Used for unit testing only. */
 public class FakeUserRemoteDataSource implements UserRemoteDataSource {
 
-    private final List<User> users;
-    private final String mockPassword = "123456";
+    private final List<UserProfile> userProfiles;
+    private final List<UserProfileDetail> userProfileDetails;
+    private String mockPassword = "123456";
 
     /** Constructs a new instance. */
     @Inject
     public FakeUserRemoteDataSource() {
-        users = new ArrayList<>();
-        users.add(new User("example@gmail.com", "", new Date(), UserRole.Basic));
+        userProfiles = new ArrayList<>();
+        userProfiles.add(new UserProfile(1, "example@gmail.com",
+                "Daniel", "", new Date(), UserRole.Basic));
+        userProfileDetails = new ArrayList<>();
+        userProfileDetails.add(new UserProfileDetail(
+                1, 25, Gender.Male, 280, 80, null,
+                "Ondo City", "https://www.facebook.com/dp_image.jpg",
+                "https://www.facebook.com/dp_image.jpg", 0, false, 0, 1,
+                1, 1, 1, 1, 1));
     }
 
-
     @Override
-    public Result<UserRole> getUserRole() {
-        return new Result.Success<>(UserRole.Basic);
-    }
-
-    @Override
-    public Result<User> login(String email, String password) {
-        for (User user : users){
-            if (user.getEmail().equals(email) && mockPassword.equals(password)){
-                User mockUser = new User(email,"18aeLk2828", new Date(), UserRole.Basic);
-                return new Result.Success<>(mockUser);
+    public Result<UserProfile> login(String email, String password) {
+        for (UserProfile userProfile : userProfiles){
+            if (userProfile.getEmail().equals(email) && mockPassword.equals(password)){
+                return new Result.Success<>(userProfiles.get(0));
             }
         }
         return new Result.Error<>(new Exception());
     }
 
     @Override
-    public boolean generateEmailCOde(String email, EmailCodeType emailCodeType) {
+    public Result<UserProfileDetail> getUserProfileDetail(int userProfileID) {
+        return new Result.Success<>(userProfileDetails.get(0));
+    }
+
+    @Override
+    public Result<UserProfileDetail> postUserProfileDetail(UserProfileDetail userProfileDetail) {
+        userProfileDetails.clear();
+        userProfileDetails.add(userProfileDetail);
+        return new Result.Success<>(userProfileDetail);
+    }
+
+    @Override
+    public Result<UserProfileDetail> editUserProfileDetail(UserProfileDetail userProfileDetail) {
+        this.userProfileDetails.clear();
+        this.userProfileDetails.add(userProfileDetail);
+        return new Result.Success<>(userProfileDetail);
+    }
+
+    @Override
+    public boolean generateEmailCode(String email, EmailCodeType emailCodeType) {
+        return true;
+    }
+
+    @Override
+    public boolean verifyEmailCode(String email, String emailCode, EmailCodeType emailCodeType) {
         return true;
     }
 
     @Override
     public boolean register(String email, String password, String confirmPassword, String emailCode, String firstName) {
-        users.add(new User(email, "", new Date(), UserRole.Basic));
+        userProfiles.clear();
+        mockPassword = password;
+        userProfiles.add(new UserProfile(1, email, firstName, "", new Date(), UserRole.Basic));
         return true;
     }
 
     @Override
     public boolean resetPassword(String email, String newPassword, String confirmNewPassword, String emailCode) {
-        for (User user : users){
-            if (user.getEmail().equals(email)){
-                users.remove(user);
-                users.add(new User(email, "", new Date(), UserRole.Basic));
+        for (UserProfile userProfile : userProfiles){
+            if (userProfile.getEmail().equals(email)){
+                mockPassword = newPassword;
                 return true;
             }
         }
@@ -65,10 +93,9 @@ public class FakeUserRemoteDataSource implements UserRemoteDataSource {
 
     @Override
     public boolean changePassword(String email, String currentPassword, String newPassword, String confirmNewPassword) {
-        for (User user : users){
-            if (user.getEmail().equals(email) && mockPassword.equals(currentPassword)){
-                users.remove(user);
-                users.add(new User(email, "", new Date(), UserRole.Basic));
+        for (UserProfile userProfile : userProfiles){
+            if (userProfile.getEmail().equals(email) && mockPassword.equals(currentPassword)){
+                mockPassword = newPassword;
                 return true;
             }
         }

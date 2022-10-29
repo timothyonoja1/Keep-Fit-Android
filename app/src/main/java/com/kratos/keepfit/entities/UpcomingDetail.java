@@ -10,7 +10,8 @@ public class UpcomingDetail {
     private final String backgroundImageUri;
 
     public UpcomingDetail(String dateTime, String authorName,
-                          String keyInformation, String expectedResult, String authorImageUri, String backgroundImageUri) {
+                          String keyInformation, String expectedResult,
+                          String authorImageUri, String backgroundImageUri) {
         this.dateTime = dateTime;
         this.authorName = authorName;
         this.keyInformation = keyInformation;

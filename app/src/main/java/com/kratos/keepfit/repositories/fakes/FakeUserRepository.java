@@ -2,7 +2,9 @@ package com.kratos.keepfit.repositories.fakes;
 
 import com.kratos.keepfit.core.ResultCallback;
 import com.kratos.keepfit.entities.EmailCodeType;
-import com.kratos.keepfit.entities.User;
+import com.kratos.keepfit.entities.Gender;
+import com.kratos.keepfit.entities.UserProfile;
+import com.kratos.keepfit.entities.UserProfileDetail;
 import com.kratos.keepfit.entities.UserRole;
 import com.kratos.keepfit.repositories.interfaces.UserRepository;
 import java.util.ArrayList;
@@ -13,14 +15,22 @@ import javax.inject.Inject;
 /** Fake User repository implementation class. Used for unit testing only. */
 public class FakeUserRepository implements UserRepository {
 
-    private final List<User> users;
+    private final List<UserProfile> userProfiles;
+    private final List<UserProfileDetail> userProfileDetails;
     private final String mockPassword = "123456";
 
     /** Constructs a new instance. */
     @Inject
     public FakeUserRepository() {
-        users = new ArrayList<>();
-        users.add(new User("example@gmail.com", "", new Date(), UserRole.Basic));
+        userProfiles = new ArrayList<>();
+        userProfiles.add(new UserProfile(
+                1, "example@gmail.com", "Daniel", "", new Date(), UserRole.Basic));
+        userProfileDetails = new ArrayList<>();
+        userProfileDetails.add(new UserProfileDetail(
+                1, 25, Gender.Male, 280, 80, null,
+                "Ondo City", "dp_image.jpg", "https://www.facebook.com/dp_image.jpg", 0, false,
+                0, 1, 1, 1, 1, 1,
+                1));
     }
 
     @Override
@@ -40,8 +50,8 @@ public class FakeUserRepository implements UserRepository {
 
     @Override
     public boolean loginSync(String email, String password) {
-        for (User user : users){
-            if (user.getEmail().equals(email) && mockPassword.equals(password)){
+        for (UserProfile userProfile : userProfiles){
+            if (userProfile.getEmail().equals(email) && mockPassword.equals(password)){
                 return true;
             }
         }
@@ -76,7 +86,7 @@ public class FakeUserRepository implements UserRepository {
 
     @Override
     public boolean registerSync(String email, String password, String confirmPassword, String emailCode, String firstName) {
-        users.add(new User(email, "", new Date(), UserRole.Basic));
+        userProfiles.add(new UserProfile(1, email, firstName, "", new Date(), UserRole.Basic));
         return true;
     }
 
@@ -87,10 +97,10 @@ public class FakeUserRepository implements UserRepository {
 
     @Override
     public boolean resetPasswordSync(String email, String newPassword, String confirmNewPassword, String emailCode) {
-        for (User user : users){
-            if (user.getEmail().equals(email)){
-                users.remove(user);
-                users.add(new User(email, "", new Date(), UserRole.Basic));
+        for (UserProfile userProfile : userProfiles){
+            if (userProfile.getEmail().equals(email)){
+                userProfiles.remove(userProfile);
+                userProfiles.add(new UserProfile(1, email, "Daniel", "", new Date(), UserRole.Basic));
                 return true;
             }
         }
@@ -104,10 +114,10 @@ public class FakeUserRepository implements UserRepository {
 
     @Override
     public boolean changePasswordSync(String email, String currentPassword, String newPassword, String confirmNewPassword) {
-        for (User user : users){
-            if (user.getEmail().equals(email) && mockPassword.equals(currentPassword)){
-                users.remove(user);
-                users.add(new User(email, "", new Date(), UserRole.Basic));
+        for (UserProfile userProfile : userProfiles){
+            if (userProfile.getEmail().equals(email) && mockPassword.equals(currentPassword)){
+                userProfiles.remove(userProfile);
+                userProfiles.add(new UserProfile(1, email, "Daniel", "", new Date(), UserRole.Basic));
                 return true;
             }
         }
@@ -115,13 +125,30 @@ public class FakeUserRepository implements UserRepository {
     }
 
     @Override
-    public void getLoggedInUser(ResultCallback<User> callback) {
-        callback.onComplete(getLoggedInUserSync());
+    public void getLoggedInUserProfile(ResultCallback<UserProfile> callback) {
+        callback.onComplete(getLoggedInUserProfileSync());
     }
 
     @Override
-    public User getLoggedInUserSync() {
-        return users.get(0);
+    public UserProfile getLoggedInUserProfileSync() {
+        return userProfiles.get(0);
+    }
+
+    @Override
+    public void getLoggedInUserProfileDetail(ResultCallback<UserProfileDetail> callback) {
+        callback.onComplete(getLoggedInUserProfileDetailSync());
+    }
+
+    @Override
+    public UserProfileDetail getLoggedInUserProfileDetailSync() {
+        return userProfileDetails.get(0);
+    }
+
+    @Override
+    public boolean editUserProfileDetailSync(UserProfileDetail userProfileDetail) {
+        userProfileDetails.clear();
+        userProfileDetails.add(userProfileDetail);
+        return true;
     }
 
     @Override
@@ -131,7 +158,7 @@ public class FakeUserRepository implements UserRepository {
 
     @Override
     public boolean logOutSync() {
-        users.clear();
+        userProfiles.clear();
         return true;
     }
 }

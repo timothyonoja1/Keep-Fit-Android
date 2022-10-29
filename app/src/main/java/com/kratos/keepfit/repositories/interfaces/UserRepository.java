@@ -2,7 +2,8 @@ package com.kratos.keepfit.repositories.interfaces;
 
 import com.kratos.keepfit.core.ResultCallback;
 import com.kratos.keepfit.entities.EmailCodeType;
-import com.kratos.keepfit.entities.User;
+import com.kratos.keepfit.entities.UserProfile;
+import com.kratos.keepfit.entities.UserProfileDetail;
 
 /** User repository interface. */
 public interface UserRepository {
@@ -68,13 +69,23 @@ public interface UserRepository {
     boolean changePasswordSync(String email, String currentPassword,
                                String newPassword, String confirmNewPassword);
 
-    /** Returns logged in user to the callback if password change is successful.
+    /** Returns logged in user profile to the callback if password change is successful.
+     *  This should be called on the main thread.
+     *  For other threads, call getLoggedInUserProfileSync() instead. */
+    void getLoggedInUserProfile(ResultCallback<UserProfile> callback);
+
+    /** Returns logged in user profile. */
+    UserProfile getLoggedInUserProfileSync();
+
+    /** Returns logged in user profile detail to the callback if password change is successful.
      *  This should be called on the main thread.
      *  For other threads, call getLoggedInUserSync() instead. */
-    void getLoggedInUser(ResultCallback<User> callback);
+    void getLoggedInUserProfileDetail(ResultCallback<UserProfileDetail> callback);
 
-    /** Returns logged in user. */
-    User getLoggedInUserSync();
+    /** Returns logged in user profile detail. */
+    UserProfileDetail getLoggedInUserProfileDetailSync();
+
+    boolean editUserProfileDetailSync(UserProfileDetail userProfileDetail);
 
     /** Returns true to the callback after logging out successfully.
      *  This should be called on the main thread.
